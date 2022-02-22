@@ -5,7 +5,7 @@ import Colors from '../constants/Colors';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
-export default function EditScreenInfo({ path }: { path: string }) {
+export default function EditScreenInfo({ path, path2, path3 }: { path: string, path2: string, path3: string }) {
   return (
     <View style ={styles.generalBackground}>
       <View style={styles.getStartedContainer}>
@@ -13,14 +13,14 @@ export default function EditScreenInfo({ path }: { path: string }) {
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Sharing files
+          {path}
         </Text>
 
         <View
           style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
           darkColor="rgba(255,255,255,0.05)"
           lightColor="rgba(0,0,0,0.05)">
-          <MonoText style = {styles.textProp}>{path}</MonoText>
+          <MonoText style = {styles.textProp}>{path2}</MonoText>
         </View>
 
         <Text
@@ -34,7 +34,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
       <View style={styles.helpContainer}>
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
           <Text style={styles.helpLinkText} lightColor={"black"}>
-            Share now
+            {path3}
           </Text>
         </TouchableOpacity>
       </View>
@@ -74,8 +74,10 @@ const styles = StyleSheet.create({
   },
   helpLink: {
     paddingVertical: 15,
+    paddingHorizontal: 15,
     backgroundColor: 'white',
     radiusBordered: true,
+    borderRadius: 30,
   },
   helpLinkText: {
     textAlign: 'center',
