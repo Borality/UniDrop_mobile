@@ -12,7 +12,7 @@ import { Text, View } from '../../components/Themed';
 import {styles} from "./TabTwoScreen.styles";
 
 
-export default function TabTwoScreen({ navigation }) {
+export default function TabTwoScreen( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>UniDrop</Text>
