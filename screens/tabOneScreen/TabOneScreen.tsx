@@ -14,7 +14,7 @@ import {
 
 
 
-export default function TabOneScreen({ navigation }) {
+export default function TabOneScreen( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>UniDrop</Text>

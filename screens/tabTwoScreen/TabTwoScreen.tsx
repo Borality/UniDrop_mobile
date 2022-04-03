@@ -12,7 +12,7 @@ import { Text, View } from '../../components/Themed';
 import {styles} from "./TabTwoScreen.styles";
 
 
-export default function TabTwoScreen({ navigation }) {
+export default function TabTwoScreen( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>UniDrop</Text>
@@ -20,6 +20,9 @@ export default function TabTwoScreen({ navigation }) {
       <EditScreenInfo path="Receiving files" path2="The UniDrop way" path3="Receive now"/>
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
+      </TouchableOpacity>
+      <TouchableOpacity key = {1} onPress={() => navigation.navigate('page5')}>
+        <Text style={styles.button} >Page 5</Text>
       </TouchableOpacity>
     </View>
   );
