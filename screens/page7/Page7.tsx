@@ -1,9 +1,9 @@
 import React from 'react'
 import {View} from 'react-native'
-export default function page5() {
+export default function page7() {
   return (
     <View>
-        Test;
+        PAGE 7
     </View>
   )
 }

@@ -24,6 +24,12 @@ export default function TabTwoScreen( {navigation}: {navigation: any} ) {
       <TouchableOpacity key = {1} onPress={() => navigation.navigate('page5')}>
         <Text style={styles.button} >Page 5</Text>
       </TouchableOpacity>
+      <TouchableOpacity key = {1} onPress={() => navigation.navigate('page6')}>
+        <Text style={styles.button} >Page 6</Text>
+      </TouchableOpacity>
+      <TouchableOpacity key = {1} onPress={() => navigation.navigate('page7')}>
+        <Text style={styles.button} >Page 7</Text>
+      </TouchableOpacity>
     </View>
   );
 }
