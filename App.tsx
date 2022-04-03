@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import tabOneScreen from './screens/tabOneScreen/TabOneScreen';
 import tabTwoScreen from './screens/tabTwoScreen/TabTwoScreen';
+import page5 from './screens/page5/Page5';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,6 +23,13 @@ export default function App() {
         <Stack.Screen
           name="tabTwoScreen"
           component={tabTwoScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="page5"
+          component={page5}
           options={{
             headerShown: false,
           }}
