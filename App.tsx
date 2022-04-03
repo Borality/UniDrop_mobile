@@ -5,7 +5,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import tabOneScreen from './screens/tabOneScreen/TabOneScreen';
 import tabTwoScreen from './screens/tabTwoScreen/TabTwoScreen';
+<<<<<<< HEAD
 import page7 from './screens/page7/Page7';
+=======
+import page5 from './screens/page5/Page5';
+import page7 from './screens/page5/Page5';
+>>>>>>> 1ab371e4e132bb6203e2ed666835706317fff311
 import StartScreen from './screens/StartScreen/StartScreen';
 import RoomID from './screens/RoomID/RoomID';
 
@@ -45,6 +50,16 @@ export default function App() {
           }}
         />
         <Stack.Screen
+<<<<<<< HEAD
+=======
+          name="page5"
+          component={page5}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+>>>>>>> 1ab371e4e132bb6203e2ed666835706317fff311
           name="page7"
           component={page7}
           options={{

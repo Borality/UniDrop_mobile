@@ -15,8 +15,17 @@ export const styles = StyleSheet.create({
       borderWidth: 1,
       padding: 5,
       height: 100,
+      marginTop: 10,
     },
     content: {
       
-    }
+    },
+    button: {
+      paddingVertical: 15,
+      paddingHorizontal: 15,
+      backgroundColor: 'white',
+      radiusBordered: true,
+      borderRadius: 30,
+      marginTop: 10,
+    },
   });
