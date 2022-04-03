@@ -14,7 +14,7 @@ import {
 
 
 
-export default function RoomID({ navigation: {navigation: any} }) {
+export default function RoomID( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>RoomID</Text>
