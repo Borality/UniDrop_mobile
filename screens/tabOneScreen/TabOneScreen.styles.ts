@@ -16,4 +16,12 @@ export const styles = StyleSheet.create({
       height: 1,
       width: '80%',
     },
+    button: {
+      paddingVertical: 15,
+      paddingHorizontal: 15,
+      backgroundColor: 'white',
+      radiusBordered: true,
+      borderRadius: 30,
+      marginTop: 10,
+    }
   });
