@@ -33,7 +33,7 @@ export default function page7({ navigation }: { navigation: any }) {
 			<View>
 				<Text style={styles.title}>Insert files:</Text>
 				<Button
-					title="Chose photo"
+					title="Choose photo"
 					color="#6495ed"
 					onPress={pickImage}
 				></Button>

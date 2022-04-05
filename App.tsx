@@ -9,7 +9,7 @@ import page5 from "./screens/sendText/SendText";
 import page6 from "./screens/selectDevices/SelectDevices";
 import page7 from "./screens/insertFiles/InsertFiles";
 import StartScreen from "./screens/StartScreen/StartScreen";
-import RoomID from "./screens/StartScreen/StartScreen";
+import RoomID from "./screens/RoomID/RoomID";
 import page8 from "./screens/page8/Page8";
 import page9 from "./screens/page9/Page9";
 
