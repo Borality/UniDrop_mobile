@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {
 	View,
 	Text,
-	TextInput,
+	Button,
 	TouchableOpacity,
 	Image,
 	SafeAreaView,
@@ -85,7 +85,7 @@ export default function page5({ navigation }: { navigation: any }) {
 				<Text style={styles.title}>Select devices:</Text>
 				<View style={styles.content}>
 					<Image source={require("../../assets/images/iphone.jpeg")} />
-					<SafeAreaView style={styles.stuff}>
+					<SafeAreaView style={styles.safeArea}>
 						<FlatList
 							data={DATA}
 							renderItem={renderItem}
@@ -95,14 +95,16 @@ export default function page5({ navigation }: { navigation: any }) {
 						/>
 					</SafeAreaView>
 				</View>
-			</View>
-			<View style={styles.content}>
-				<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
-					<AntDesign name="back" size={50} />
-				</TouchableOpacity>
-				<TouchableOpacity key={1} onPress={() => navigation.navigate("page7")}>
-					<Text style={styles.button}>Next</Text>
-				</TouchableOpacity>
+				<View style={styles.content}>
+					<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
+						<AntDesign name="back" size={50} />
+					</TouchableOpacity>
+					<Button
+						title="Next"
+						color="#6495ed"
+						onPress={() => navigation.navigate("page7")}
+					/>
+				</View>
 			</View>
 		</View>
 	);

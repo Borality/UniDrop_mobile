@@ -18,19 +18,8 @@ export const styles = StyleSheet.create({
       marginTop: 10,
     },
     content: {
-      
-    },
-    button: {
-      paddingVertical: 15,
-      paddingHorizontal: 15,
-      backgroundColor: 'white',
-      radiusBordered: true,
-      borderRadius: 30,
-      marginTop: 10,
-    },
-    buttons: {
       flexDirection: "row",
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    }
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
   });
