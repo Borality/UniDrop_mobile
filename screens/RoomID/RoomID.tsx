@@ -18,11 +18,10 @@ export default function RoomID( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>RoomID</Text>
-      <Text style={styles.title}>Enter text to send:</Text>
+      <Text style={styles.title}>Enter RoomID:</Text>
 				<TextInput
 					style={styles.textInput}
-					multiline
-					numberOfLines={4}
+					numberOfLines={1}
 				></TextInput>
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
