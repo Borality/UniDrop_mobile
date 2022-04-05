@@ -10,6 +10,8 @@ import page6 from "./screens/page6/Page6";
 import page7 from "./screens/page7/Page7";
 import StartScreen from "./screens/StartScreen/StartScreen";
 import RoomID from "./screens/StartScreen/StartScreen";
+import page8 from "./screens/page8/Page8";
+import page9 from "./screens/page9/Page9";
 
 const Stack = createNativeStackNavigator();
 
@@ -52,7 +54,7 @@ export default function App() {
 						headerShown: false,
 					}}
 				/>
-        <Stack.Screen
+        		<Stack.Screen
 					name="page6"
 					component={page6}
 					options={{
@@ -62,6 +64,20 @@ export default function App() {
 				<Stack.Screen
 					name="page7"
 					component={page7}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="page8"
+					component={page8}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="page9"
+					component={page9}
 					options={{
 						headerShown: false,
 					}}
