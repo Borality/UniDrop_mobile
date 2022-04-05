@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import {
 	View,
 	Text,
-	TextInput,
 	TouchableOpacity,
 	Button,
-	SafeAreaView,
 	Image,
 } from "react-native";
-import { styles } from "./Page7.styles";
+import { styles } from "./InsertFiles.styles";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import * as ImagePicker from "expo-image-picker";
 
@@ -46,7 +44,7 @@ export default function page7({ navigation }: { navigation: any }) {
 					<Button
 						title="Next"
 						color="#6495ed"
-						onPress={() => navigation.navigate("page7")}
+						onPress={() => navigation.navigate("page8")}
 					/>
 				</View>
 				{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}

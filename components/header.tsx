@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View} from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Header({ title, navigation }: {title: any, navigation: any}) {
+export default function Header({ navigation }: { navigation: any}) {
 
   const openMenu = () => {
     navigation.openDrawer();
@@ -11,9 +11,9 @@ export default function Header({ title, navigation }: {title: any, navigation: a
 
   return (
     <View style={styles.header}>
-      <MaterialIcons name='menu' size={28} onPress={openMenu} style={styles.icon} />
+      <MaterialIcons name='menu' size={28} style={styles.icon} />
       <View>
-        <Text style={styles.headerText}>{title}</Text>
+        <Text style={styles.headerText}>UniDrop</Text>
       </View>
     </View>
   );
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#6495ed',
   },
   headerText: {
     fontWeight: 'bold',
@@ -34,7 +35,6 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   icon: {
-    position: 'absolute',
-    left: 16,
+      margin: 10
   }
 });

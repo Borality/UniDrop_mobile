@@ -2,18 +2,19 @@ import * as React from "react";
 import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
+import Header from "./components/header";
 import tabOneScreen from "./screens/tabOneScreen/TabOneScreen";
 import tabTwoScreen from "./screens/tabTwoScreen/TabTwoScreen";
-import page5 from "./screens/page5/Page5";
-import page6 from "./screens/page6/Page6";
-import page7 from "./screens/page7/Page7";
+import page5 from "./screens/sendText/SendText";
+import page6 from "./screens/selectDevices/SelectDevices";
+import page7 from "./screens/insertFiles/InsertFiles";
 import StartScreen from "./screens/StartScreen/StartScreen";
 import RoomID from "./screens/StartScreen/StartScreen";
 import page8 from "./screens/page8/Page8";
 import page9 from "./screens/page9/Page9";
 
 const Stack = createNativeStackNavigator();
+
 
 export default function App() {
 	return (
@@ -24,6 +25,11 @@ export default function App() {
 					component={tabOneScreen}
 					options={{
 						headerShown: true,
+						title: "UniDrop",
+						headerStyle: {
+							backgroundColor: "#1f1f1f",
+						},
+						headerTintColor: "#fff",
 					}}
 				/>
 				<Stack.Screen
@@ -54,7 +60,7 @@ export default function App() {
 						headerShown: false,
 					}}
 				/>
-        		<Stack.Screen
+				<Stack.Screen
 					name="page6"
 					component={page6}
 					options={{

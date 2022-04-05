@@ -8,7 +8,7 @@ import {
 	SafeAreaView,
 	FlatList,
 } from "react-native";
-import { styles } from "./Page6.styles";
+import { styles } from "./SelectDevices.styles";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import AntDesign from "react-native-vector-icons/AntDesign";
 

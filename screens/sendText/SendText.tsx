@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Button } from "react-native";
-import { styles } from "./Page5.styles";
+import { styles } from "./SendText.styles";
 import AntDesign from "react-native-vector-icons/AntDesign";
 export default function page5({ navigation }: { navigation: any }) {
 	return (
