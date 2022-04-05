@@ -100,7 +100,7 @@ export default function page5({ navigation }: { navigation: any }) {
 				<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
 					<AntDesign name="back" size={50} />
 				</TouchableOpacity>
-				<TouchableOpacity key={1} onPress={() => navigation.navigate("page6")}>
+				<TouchableOpacity key={1} onPress={() => navigation.navigate("page7")}>
 					<Text style={styles.button}>Next</Text>
 				</TouchableOpacity>
 			</View>

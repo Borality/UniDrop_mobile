@@ -7,7 +7,7 @@ import tabOneScreen from "./screens/tabOneScreen/TabOneScreen";
 import tabTwoScreen from "./screens/tabTwoScreen/TabTwoScreen";
 import page5 from "./screens/page5/Page5";
 import page6 from "./screens/page6/Page6";
-import page7 from "./screens/page5/Page5";
+import page7 from "./screens/page7/Page7";
 import StartScreen from "./screens/StartScreen/StartScreen";
 import RoomID from "./screens/StartScreen/StartScreen";
 
