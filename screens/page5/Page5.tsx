@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "./Page5.styles";
-
-export default function page5( {navigation}: {navigation: any} ) {
+import AntDesign from "react-native-vector-icons/AntDesign";
+export default function page5({ navigation }: { navigation: any }) {
 	return (
 		<View style={styles.container}>
 			<View style={styles.content}>
@@ -13,12 +13,14 @@ export default function page5( {navigation}: {navigation: any} ) {
 					numberOfLines={4}
 				></TextInput>
 			</View>
-      <TouchableOpacity
-					key={1}
-					onPress={() => navigation.navigate("tabTwoScreen")}
-				>
-					<Text style={styles.button}>Next page </Text>
-				</TouchableOpacity>
+			<View style = {styles.buttons}>
+			<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
+				<AntDesign name = "back" size = {50}/>
+			</TouchableOpacity>
+			<TouchableOpacity key={1} onPress={() => navigation.navigate("page6")}>
+				<Text style={styles.button}>Next</Text>
+			</TouchableOpacity>
+			</View>
 		</View>
 	);
 }

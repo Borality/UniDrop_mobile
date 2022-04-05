@@ -10,6 +10,17 @@ export const styles = StyleSheet.create({
     title: {
       fontSize: 40,
       fontWeight: 'bold',
+      textAlign: "center",
+
+    },
+    devicesTitle: {
+      fontSize: 12,
+      textAlign: "center",
+    },
+    devicesIcons: {
+      display: "flex",
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     textInput: {
       borderWidth: 1,
@@ -18,7 +29,9 @@ export const styles = StyleSheet.create({
       marginTop: 10,
     },
     content: {
-      
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
     },
     button: {
       paddingVertical: 15,
@@ -27,6 +40,26 @@ export const styles = StyleSheet.create({
       radiusBordered: true,
       borderRadius: 30,
       marginTop: 10,
+      flex: 1,
+    },
+    boxes: {
+        backgroundColor: 'white',
+        borderRadius: 1,
+        borderWidth: 1,
+        margin: 10,
+        padding: 20,
+    },
+    item: {
+      padding: 35,
+      marginVertical: 8,
+      flex:1,
+      marginHorizontal: 6,
+    },
+    stuff: {
+      flexDirection: "row",
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      display: "flex",
     },
     buttons: {
       flexDirection: "row",
