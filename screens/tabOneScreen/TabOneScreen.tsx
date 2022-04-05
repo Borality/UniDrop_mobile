@@ -1,17 +1,10 @@
 import * as React from 'react';
 import EditScreenInfo from '../../components/EditScreenInfo';
 import { Text, View } from '../../components/Themed';
-import { RootTabScreenProps } from '../../types';
 import {styles} from "./TabOneScreen.styles";
 import {
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  FlatList,
-  ScrollView,
   TouchableOpacity,
 } from 'react-native';
-
 
 
 export default function TabOneScreen( {navigation}: {navigation: any} ) {

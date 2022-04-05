@@ -30,21 +30,7 @@ export default function EditScreenInfo({ path, path2, path3 }: { path: string, p
           Cross-platform capable
         </Text>
       </View>
-
-      <View style={styles.helpContainer}>
-        <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-          <Text style={styles.helpLinkText} lightColor={"black"}>
-            {path3}
-          </Text>
-        </TouchableOpacity>
-      </View>
     </View>
-  );
-}
-
-function handleHelpPress() {
-  WebBrowser.openBrowserAsync(
-    'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
   );
 }
 
