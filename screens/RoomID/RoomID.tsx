@@ -1,6 +1,6 @@
-import * as React from 'react';
+import React from 'react';
 import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import { View, Text, TextInput, Button } from "react-native";
 import { RootTabScreenProps } from '../../types';
 import {styles} from "./RoomID.styles";
 import {
@@ -18,8 +18,15 @@ export default function RoomID( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>RoomID</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="Enter Room ID" path2="The UniDrop way" path3="Go"/>
+      <Text style={styles.title}>Enter text to send:</Text>
+				<TextInput
+					style={styles.textInput}
+					multiline
+					numberOfLines={4}
+				></TextInput>
+      <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
+        <Text style={styles.button} >Last page </Text>
+      </TouchableOpacity>
       <TouchableOpacity key = {1} onPress={() => navigation.navigate('page 7')}>
         <Text style={styles.button} > Next Page </Text>
       </TouchableOpacity>
