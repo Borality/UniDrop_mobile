@@ -24,9 +24,6 @@ export default function TabTwoScreen( {navigation}: {navigation: any} ) {
       <TouchableOpacity key = {1} onPress={() => navigation.navigate('StartScreen')}>
         <Text style={styles.button} >StartScreen</Text>
       </TouchableOpacity>
-      <TouchableOpacity key = {1} onPress={() => navigation.navigate('RoomID')}>
-        <Text style={styles.button} >RoomID</Text>
-      </TouchableOpacity>
       <TouchableOpacity key = {1} onPress={() => navigation.navigate('page7')}>
         <Text style={styles.button} >Page 7</Text>
       </TouchableOpacity>
