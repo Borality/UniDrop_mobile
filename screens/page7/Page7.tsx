@@ -6,6 +6,7 @@ import {
 	TouchableOpacity,
 	Button,
 	SafeAreaView,
+	Image,
 } from "react-native";
 import { styles } from "./Page7.styles";
 import AntDesign from "react-native-vector-icons/AntDesign";
@@ -48,6 +49,7 @@ export default function page7({ navigation }: { navigation: any }) {
 						onPress={() => navigation.navigate("page7")}
 					/>
 				</View>
+				{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
 			</View>
 		</View>
 	);
