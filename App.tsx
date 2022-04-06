@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "./components/header";
 import tabOneScreen from "./screens/tabOneScreen/TabOneScreen";
 import tabTwoScreen from "./screens/tabTwoScreen/TabTwoScreen";
+import page4 from "./screens/sendFiles/SendFiles";
 import page5 from "./screens/sendText/SendText";
 import page6 from "./screens/selectDevices/SelectDevices";
 import page7 from "./screens/insertFiles/InsertFiles";
@@ -90,8 +91,8 @@ export default function App() {
 					}}
 				/>
 				<Stack.Screen
-					name="yourRoomID"
-					component={yourRoomID}
+					name="page4"
+					component={page4}
 					options={{
 						headerShown: false,
 					}}
