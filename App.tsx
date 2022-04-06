@@ -22,7 +22,7 @@ export default function App() {
 		<NavigationContainer>
 			<Stack.Navigator>
 				<Stack.Screen
-					name="UniDrop"
+					name="tabOneScreen"
 					component={tabOneScreen}
 					options={{
 						headerShown: true,

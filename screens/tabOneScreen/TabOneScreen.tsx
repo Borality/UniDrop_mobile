@@ -1,8 +1,6 @@
 import * as React from "react";
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
 import { styles } from "./TabOneScreen.styles";
-import { TouchableOpacity, Button } from "react-native";
+import { TouchableOpacity, Button, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const MyButton = ({
@@ -30,13 +28,6 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 			<Text style={styles.title}>UniDrop</Text>
 			<View
 				style={styles.separator}
-				lightColor="#eee"
-				darkColor="rgba(255,255,255,0.1)"
-			/>
-			<EditScreenInfo
-				path="Sharing files"
-				path2="The UniDrop way"
-				path3="Share now"
 			/>
 
 			<View style={styles.buttonContainer}>

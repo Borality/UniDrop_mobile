@@ -9,7 +9,7 @@ import {
   Image,
 } from "react-native";
 import { styles } from "./Page9.styles";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { AntDesign } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 
 
@@ -21,7 +21,6 @@ export default function page7({ navigation }: { navigation: any }) {
       <View style={styles.container}>
         <View>
           <Text style={styles.title}>You're all set!</Text>
-					  <Image source={require("../../assets/images/check.png")} />
             <TouchableOpacity key={1} onPress={() => navigation.goBack()}>
               <AntDesign name="back" size={50} />
             </TouchableOpacity>

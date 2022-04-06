@@ -20,6 +20,7 @@ export const styles = StyleSheet.create({
       display: "flex",
       alignItems: 'center',
       justifyContent: 'center',
+      textAlign: "center",
     },
     content: {
       flexDirection: 'row',
@@ -27,10 +28,10 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between',
     },
     item: {
-      padding: 35,
+      padding: 25,
       marginVertical: 8,
       flex:1,
-      marginHorizontal: 6,
+      marginHorizontal: 15,
     },
     safeArea: {
       flexDirection: "row",

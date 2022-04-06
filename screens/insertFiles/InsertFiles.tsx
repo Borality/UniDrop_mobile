@@ -7,7 +7,7 @@ import {
 	Image,
 } from "react-native";
 import { styles } from "./InsertFiles.styles";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { AntDesign } from '@expo/vector-icons'; 
 import * as ImagePicker from "expo-image-picker";
 
 export default function page7({ navigation }: { navigation: any }) {

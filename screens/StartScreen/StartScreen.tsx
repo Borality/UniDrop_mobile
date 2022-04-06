@@ -1,15 +1,9 @@
 import * as React from 'react';
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
-import { RootTabScreenProps } from '../../types';
 import {styles} from "./StartScreen.styles";
 import {
-  StyleSheet,
-  SafeAreaView,
-  Image,
-  FlatList,
-  ScrollView,
   TouchableOpacity,
+  Text,
+  View,
 } from 'react-native';
 
 
@@ -18,7 +12,7 @@ export default function StartScreen( {navigation}: {navigation: any} ) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>StartScreen</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <View style={styles.separator} />
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
       </TouchableOpacity>
