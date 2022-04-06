@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
       paddingVertical: 15,
       paddingHorizontal: 15,
       backgroundColor: 'white',
-      radiusBordered: true,
       borderRadius: 30,
       marginTop: 10,
     }
