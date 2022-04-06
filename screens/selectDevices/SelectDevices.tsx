@@ -9,8 +9,8 @@ import {
 	FlatList,
 } from "react-native";
 import { styles } from "./SelectDevices.styles";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { AntDesign } from "@expo/vector-icons";
 
 const DATA = [
 	{
@@ -84,7 +84,6 @@ export default function page5({ navigation }: { navigation: any }) {
 			<View>
 				<Text style={styles.title}>Select devices:</Text>
 				<View style={styles.content}>
-					<Image source={require("../../assets/images/iphone.jpeg")} />
 					<SafeAreaView style={styles.safeArea}>
 						<FlatList
 							data={DATA}

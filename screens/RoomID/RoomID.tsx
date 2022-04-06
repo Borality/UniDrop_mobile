@@ -1,7 +1,5 @@
-import React, { Component} from 'react';
-import EditScreenInfo from '../../components/EditScreenInfo';
+import React from 'react';
 import { View, Text, TextInput, Button } from "react-native";
-import { RootTabScreenProps } from '../../types';
 import {styles} from "./RoomID.styles";
 import {
   StyleSheet,

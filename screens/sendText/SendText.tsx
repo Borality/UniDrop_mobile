@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Button } from "react-native";
 import { styles } from "./SendText.styles";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import { AntDesign } from "@expo/vector-icons";
 export default function page5({ navigation }: { navigation: any }) {
 	return (
 		<View style={styles.container}>

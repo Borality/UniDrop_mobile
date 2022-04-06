@@ -1,8 +1,6 @@
 import * as React from "react";
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
 import { styles } from "./SendFiles.styles";
-import { TouchableOpacity, Button } from "react-native";
+import { TouchableOpacity, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const MyButton = ({
