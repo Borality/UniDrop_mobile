@@ -15,6 +15,7 @@ import page8 from "./screens/page8/Page8";
 import page9 from "./screens/page9/Page9";
 import yourRoomID from "./screens/yourRoomID/yourRoomID";
 
+
 const Stack = createNativeStackNavigator();
 
 
@@ -93,6 +94,13 @@ export default function App() {
 				<Stack.Screen
 					name="page4"
 					component={page4}
+					options={{
+						headerShown: false,
+					}}
+				/>
+				<Stack.Screen
+					name="yourRoomID"
+					component={yourRoomID}
 					options={{
 						headerShown: false,
 					}}

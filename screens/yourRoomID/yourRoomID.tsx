@@ -19,7 +19,7 @@ export default function yourRoomID( {navigation}: {navigation: any} ) {
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
       </TouchableOpacity>
-      <TouchableOpacity key = {1} onPress={() => navigation.navigate('')}>
+      <TouchableOpacity key = {1} onPress={() => navigation.navigate('page4')}>
         <Text style={styles.button} > Next Page </Text>
       </TouchableOpacity>
     </View>
