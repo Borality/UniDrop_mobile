@@ -1,13 +1,7 @@
 import React, { useState } from "react";
-import {
-	View,
-	Text,
-	TouchableOpacity,
-	Button,
-	Image,
-} from "react-native";
+import { View, Text, TouchableOpacity, Button, Image } from "react-native";
 import { styles } from "./InsertFiles.styles";
-import { AntDesign } from '@expo/vector-icons'; 
+import { AntDesign } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 
 export default function page7({ navigation }: { navigation: any }) {
@@ -32,22 +26,27 @@ export default function page7({ navigation }: { navigation: any }) {
 		<View style={styles.container}>
 			<View>
 				<Text style={styles.title}>Insert files:</Text>
-				<Button
-					title="Choose photo"
-					color="#6495ed"
-					onPress={pickImage}
-				></Button>
+				<TouchableOpacity style={styles.button} onPress={pickImage}>
+					<Text style={styles.buttonText}> Choose photo </Text>
+				</TouchableOpacity>
 				<View style={styles.content}>
-					<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
+					<TouchableOpacity
+						style={{ marginHorizontal: 15 }}
+						key={1}
+						onPress={() => navigation.goBack()}
+					>
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
-					<Button
-						title="Next"
-						color="#6495ed"
+					<TouchableOpacity
+						style={styles.button}
 						onPress={() => navigation.navigate("page8")}
-					/>
+					>
+						<Text style={styles.buttonText}> Next </Text>
+					</TouchableOpacity>
 				</View>
-				{image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+				{image && (
+					<Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+				)}
 			</View>
 		</View>
 	);
