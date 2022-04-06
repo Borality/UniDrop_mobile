@@ -16,12 +16,22 @@ export const styles = StyleSheet.create({
       height: 1,
       width: '80%',
     },
-    buttons: {
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "space-between",
+    buttonContainer: {
+      width: "60%",
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 40,
+      backgroundColor: "#5D8AA8",
     },
     button: {
-      margin: 2,
+      backgroundColor: "#0782F9",
+      padding: 10,
+      borderRadius: 10,
+      alignItems: "center",
+      marginTop: 5,
+    },
+    buttonText: {
+      fontWeight: "700",
+      fontSize: 16,
     }
   });
