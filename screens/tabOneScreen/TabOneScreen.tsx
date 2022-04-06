@@ -44,6 +44,7 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 				{/*Add pages here */}
 				<MyButton title="Page 1" page="StartScreen" navigation={navigation} />
 				<MyButton title="Page 2" page="RoomID" navigation={navigation} />
+				<MyButton title="Page 4" page="page4" navigation={navigation} />
 				<MyButton title="Page 5" page="page5" navigation={navigation} />
 				<MyButton title="Page 6" page="page6" navigation={navigation} />
 				<MyButton title="Page 7" page="page7" navigation={navigation} />
