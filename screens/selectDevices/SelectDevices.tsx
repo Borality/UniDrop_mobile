@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+//React native buttons
 import {
 	View,
 	Text,
-	Button,
 	TouchableOpacity,
-	Image,
 	SafeAreaView,
 	FlatList,
 } from "react-native";
 import { styles } from "./SelectDevices.styles";
-import { MaterialIcons } from '@expo/vector-icons'; 
+//Buttons
+import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
 const DATA = [
@@ -95,14 +95,19 @@ export default function page5({ navigation }: { navigation: any }) {
 					</SafeAreaView>
 				</View>
 				<View style={styles.content}>
-					<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
+					<TouchableOpacity
+						style={{ marginHorizontal: 15 }}
+						key={1}
+						onPress={() => navigation.goBack()}
+					>
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
-					<Button
-						title="Next"
-						color="#6495ed"
+					<TouchableOpacity
+						style={styles.button}
 						onPress={() => navigation.navigate("page7")}
-					/>
+					>
+						<Text style={styles.buttonText}> Next </Text>
+					</TouchableOpacity>
 				</View>
 			</View>
 		</View>

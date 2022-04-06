@@ -20,4 +20,16 @@ export const styles = StyleSheet.create({
 		alignItems: "center",
 		justifyContent: "space-between",
 	},
+	buttonText: {
+		fontWeight: "700",
+		fontSize: 16,
+	},
+	button: {
+		backgroundColor: "#6495ed",
+		padding: 10,
+		borderRadius: 10,
+		alignItems: "center",
+		marginHorizontal: 15,
+	},
+
 });
