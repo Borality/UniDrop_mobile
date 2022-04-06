@@ -15,11 +15,11 @@ import {
 
 export default function RoomID() {
 
-  const [name,setName] = useState("");
+  const [IDnumber,setIDnumber] = useState("");
   const navigation = useNavigation();
   const initiate = () => {
     navigation.navigate("yourRoomID", {
-      name: name,
+      IDnumber: IDnumber,
     });
   };
   return (
@@ -27,8 +27,8 @@ export default function RoomID() {
       <Text style={styles.title}>RoomID</Text>
       <Input
       placeholder="Enter RoomID"
-      value={name}
-      onChangeText={(text) => setName(text)}
+      value={IDnumber}
+      onChangeText={(text) => setIDnumber(text)}
       />
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
