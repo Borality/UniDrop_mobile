@@ -11,15 +11,17 @@ export const styles = StyleSheet.create({
       fontSize: 40,
       fontWeight: 'bold',
     },
-    separator: {
-      marginVertical: 30,
-      height: 1,
-      width: '80%',
+    buttonContainer: {
+      width: "60%",
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: 10,
     },
     button: {
-      paddingVertical: 15,
-      paddingHorizontal: 15,
-      backgroundColor: 'white',
-      marginTop: 10,
+      backgroundColor: "#0782F9",
+      padding: 10,
+      borderRadius: 10,
+      alignItems: "center",
+      marginTop: 5,
     }
   });

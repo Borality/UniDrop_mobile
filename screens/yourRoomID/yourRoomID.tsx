@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 
-export default function yourRoomID({navigation}: {navigation: any}) {
+export default function YourRoomID({navigation}: {navigation: any}) {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 50}}> Your RoomID # is:</Text>
