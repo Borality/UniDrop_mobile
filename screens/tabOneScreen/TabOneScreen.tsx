@@ -1,6 +1,6 @@
 import * as React from "react";
 import { styles } from "./TabOneScreen.styles";
-import { TouchableOpacity, Button, Text, View } from "react-native";
+import { TouchableOpacity, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
 const MyButton = ({
@@ -31,8 +31,6 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 			/>
 
 			<View style={styles.buttonContainer}>
-				<MyButton title = "Next" page = "tabTwoScreen" navigation = {navigation}/>
-				{/*Add pages here */}
 				<MyButton title="Page 1" page="StartScreen" navigation={navigation} />
 				<MyButton title="Page 2" page="RoomID" navigation={navigation} />
 				<MyButton title="Page 3" page="yourRoomID" navigation={navigation} />

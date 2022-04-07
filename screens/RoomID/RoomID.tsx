@@ -1,7 +1,5 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
 import React, { useState } from 'react';
-import { View, Text, TextInput } from "react-native";
-import { Input, Button} from "react-native-elements";
+import { View, Text, TextInput, Button} from "react-native";
 import {styles} from "./RoomID.styles";
 import yourRoomID from "../yourRoomID/yourRoomID";
 import {
@@ -13,27 +11,24 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
-export default function RoomID() {
+export default function RoomID({ navigation }: { navigation: any }) {
 
-  const [IDnumber,setIDnumber] = useState("");
-  const navigation = useNavigation();
-  const initiate = () => {
-    navigation.navigate("yourRoomID", {
-      IDnumber: IDnumber,
-    });
-  };
+  // const [IDnumber,setIDnumber] = useState<any | null>(null);
+  // const initiate = () => {
+  //   navigation.navigate("yourRoomID", {
+  //     IDnumber: "test",
+  //   });
+  // };
   return (
     <View style={styles.container}>
       <Text style={styles.title}>RoomID</Text>
-      <Input
+      <TextInput
       placeholder="Enter RoomID"
-      value={IDnumber}
-      onChangeText={(text) => setIDnumber(text)}
       />
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
       </TouchableOpacity>
-      <Button title="initiate" onPress ={initiate}/>
+      <Button title="next" onPress ={() => navigation.navigate("yourRoomID")}/>
     </View>
   );
 }
