@@ -15,12 +15,12 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 			<Button
 				buttonStyle={styles.button}
 				title="Start page"
-				onPress={() => navigation.navigate("RoomID")}
+				onPress={() => navigation.navigate("roomID")}
 			/>
 			<Button
 				buttonStyle={styles.button}
 				title="Join page"
-				onPress={() => navigation.navigate("RoomID")}
+				onPress={() => navigation.navigate("roomID")}
 			/>
 		</View>
 	);

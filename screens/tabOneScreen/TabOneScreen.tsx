@@ -8,23 +8,24 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 	const Data = [
 		{
 			title: "Page 1",
-			component: "StartScreen",
+			component: "startScreen",
 			navigation: navigation,
 			key: 1,
 		},
-		{ title: "Page 2", component: "RoomID", navigation: navigation, key: 1 },
+		{ title: "Page 2", component: "roomID", navigation: navigation, key: 1 },
 		{
 			title: "Page 3",
 			component: "yourRoomID",
 			navigation: navigation,
 			key: 3,
 		},
-		{ title: "Page 4", component: "page5", navigation: navigation, key: 4 },
-		{ title: "Page 5", component: "page6", navigation: navigation, key: 5 },
-		{ title: "Page 6", component: "page7", navigation: navigation, key: 6 },
-		{ title: "Page 7", component: "page8", navigation: navigation, key: 7 },
-		{ title: "Page 8", component: "page9", navigation: navigation, key: 8 },
+		{ title: "Page 4", component: "page4", navigation: navigation, key: 4 },
+		{ title: "Page 5", component: "page5", navigation: navigation, key: 5 },
+		{ title: "Page 6", component: "page6", navigation: navigation, key: 6 },
+		{ title: "Page 7", component: "page7", navigation: navigation, key: 7 },
+		{ title: "Page 8", component: "page8", navigation: navigation, key: 8 },
 		{ title: "Page 9", component: "page9", navigation: navigation, key: 9 },
+		{ title: "login", component: "login", navigation: navigation, key: 10 },
 	];
 	return (
 		<View style={styles.container}>

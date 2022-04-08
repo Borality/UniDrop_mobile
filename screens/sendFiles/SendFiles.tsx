@@ -2,33 +2,25 @@ import * as React from "react";
 import { styles } from "./SendFiles.styles";
 import { TouchableOpacity, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
+import { Button } from "react-native-elements";
 
-const MyButton = ({
-	page,
-	title,
-	navigation,
-}: {
-	page: string;
-	title: string;
-	navigation: any;
-}) => {
-	return (
-		<TouchableOpacity
-			style={styles.button}
-			onPress={() => navigation.navigate(page)}
-		>
-			<Text style = {styles.buttonText} > {title} </Text>
-		</TouchableOpacity>
-	);
-};
 
 export default function Page4({ navigation }: { navigation: any }) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Choose an option:</Text>
 			<View style={styles.buttonContainer}>
-				<MyButton title = "Send text to device" page = "page5" navigation = {navigation}/>
-                <MyButton title = "Send files to device" page = "page7" navigation = {navigation}/>
+				<Button
+							buttonStyle={styles.button}
+							title="Send text to device"
+							onPress={() => navigation.navigate("page4")}
+						/>
+				<Button
+							buttonStyle={styles.button}
+							title="Send files to device"
+							onPress={() => navigation.navigate("page7")}
+						/>
+
 			</View>
 			<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
 				<AntDesign name="back" size={50} />

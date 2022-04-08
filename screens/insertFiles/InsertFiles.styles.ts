@@ -25,11 +25,10 @@ export const styles = StyleSheet.create({
 		fontSize: 16,
 	},
 	button: {
-		backgroundColor: "#6495ed",
+		backgroundColor: "#0782F9",
 		padding: 10,
 		borderRadius: 10,
 		alignItems: "center",
-		marginHorizontal: 15,
-	},
-
+		marginTop: 5,
+	  },
 });
