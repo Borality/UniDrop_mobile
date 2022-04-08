@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "./components/header";
@@ -18,6 +18,7 @@ import Login from "./screens/login/Login";
 const Stack = createNativeStackNavigator();
 //Add all names and components here
 const Data = [
+	{ name: "tabOneScreen", component: TabOneScreen, key: 0},
 	{ name: "startScreen", component: StartScreen, key: 1},
 	{ name: "roomID", component: RoomID, key: 2},
 	{ name: "yourRoomID", component: YourRoomID, key: 3},
@@ -27,8 +28,6 @@ const Data = [
 	{ name: "page7", component: Page7, key: 7},
 	{ name: "page8", component: Page8, key: 8},
 	{ name: "page9", component: Page9, key: 9},
-	{ name: "login", component: Login, key: 10},
-
 ];
 
 export default function App() {
@@ -36,8 +35,8 @@ export default function App() {
 		<NavigationContainer>
 			<Stack.Navigator>
 				<Stack.Screen
-					name="TabOneScreen"
-					component={TabOneScreen}
+					name="login"
+					component={Login}
 					options={{
 						headerShown: true,
 						title: "UniDrop",
