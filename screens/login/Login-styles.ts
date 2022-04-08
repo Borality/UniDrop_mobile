@@ -11,22 +11,20 @@ export const styles = StyleSheet.create({
       fontSize: 40,
       fontWeight: 'bold',
     },
-    textInput: {
-      borderWidth: 1,
-      padding: 5,
-      height: 100,
+    buttonContainer: {
+      width: "60%",
+      justifyContent: 'center',
+      alignItems: 'center',
       marginTop: 10,
     },
-    content: {
-      flexDirection: "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-    },
     button: {
-      color: "#0782F9",
+      backgroundColor: "#0782F9",
       padding: 10,
       borderRadius: 10,
       alignItems: "center",
       marginTop: 5,
     },
+    inputContainer: {
+        width: "60%",
+    }
   });

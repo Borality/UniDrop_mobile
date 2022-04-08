@@ -7,18 +7,19 @@ import TabOneScreen from "./screens/tabOneScreen/TabOneScreen";
 import StartScreen from "./screens/StartScreen/StartScreen";
 import RoomID from "./screens/RoomID/RoomID";
 import YourRoomID from "./screens/yourRoomID/yourRoomID";
-import Page4 from "./screens/sendFiles/SendFiles";
-import Page5 from "./screens/sendText/SendText";
+import Page4 from "./screens/sendText/SendText";
+import Page5 from "./screens/sendFiles/SendFiles";
 import Page6 from "./screens/selectDevices/SelectDevices";
 import Page7 from "./screens/insertFiles/InsertFiles";
 import Page8 from "./screens/page8/Page8";
 import Page9 from "./screens/page9/Page9";
+import Login from "./screens/login/Login";
 
 const Stack = createNativeStackNavigator();
 //Add all names and components here
 const Data = [
-	{ name: "StartScreen", component: StartScreen, key: 1},
-	{ name: "RoomID", component: RoomID, key: 2},
+	{ name: "startScreen", component: StartScreen, key: 1},
+	{ name: "roomID", component: RoomID, key: 2},
 	{ name: "yourRoomID", component: YourRoomID, key: 3},
 	{ name: "page4", component: Page4, key: 4},
 	{ name: "page5", component: Page5, key: 5},
@@ -26,6 +27,7 @@ const Data = [
 	{ name: "page7", component: Page7, key: 7},
 	{ name: "page8", component: Page8, key: 8},
 	{ name: "page9", component: Page9, key: 9},
+	{ name: "login", component: Login, key: 10},
 
 ];
 

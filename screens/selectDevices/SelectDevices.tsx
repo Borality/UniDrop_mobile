@@ -8,9 +8,10 @@ import {
 	FlatList,
 } from "react-native";
 import { styles } from "./SelectDevices.styles";
-//Buttons
+//Icons
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import { Button } from "react-native-elements";
 
 const DATA = [
 	{
@@ -66,7 +67,7 @@ const Item = ({
 export default function Page6({ navigation }: { navigation: any }) {
 	const [selectedId, setSelectedId] = useState(null);
 	const renderItem = ({ item }: { item: any }) => {
-		const backgroundColor = item.id === selectedId ? "#87ceeb" : "#6495ed";
+		const backgroundColor = item.id === selectedId ? "#87ceeb" : "#0782F9";
 		const color = item.id === selectedId ? "white" : "black";
 
 		return (
@@ -95,19 +96,17 @@ export default function Page6({ navigation }: { navigation: any }) {
 					</SafeAreaView>
 				</View>
 				<View style={styles.content}>
-					<TouchableOpacity
-						style={{ marginHorizontal: 15 }}
-						key={1}
+					<TouchableOpacity						
 						onPress={() => navigation.goBack()}
+						style ={{marginLeft: 20}}
 					>
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
-					<TouchableOpacity
-						style={styles.button}
-						onPress={() => navigation.navigate("page7")}
-					>
-						<Text style={styles.buttonText}> Next </Text>
-					</TouchableOpacity>
+					<Button
+							buttonStyle={styles.button}
+							title="Next"
+							onPress={() => navigation.navigate("page7")}
+						/>
 				</View>
 			</View>
 		</View>

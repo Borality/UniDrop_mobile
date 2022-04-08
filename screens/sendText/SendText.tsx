@@ -1,7 +1,9 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity, Button } from "react-native";
+import { View, Text, TextInput, TouchableOpacity} from "react-native";
 import { styles } from "./SendText.styles";
 import { AntDesign } from "@expo/vector-icons";
+import { Button } from "react-native-elements";
+
 export default function Page5({ navigation }: { navigation: any }) {
 	return (
 		<View style={styles.container}>
@@ -17,10 +19,10 @@ export default function Page5({ navigation }: { navigation: any }) {
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
 					<Button
-						title="Next"
-						color="#6495ed"
-						onPress={() => navigation.navigate("page7")}
-					/>
+							buttonStyle={styles.button}
+							title="Next"
+							onPress={() => navigation.navigate("page7")}
+						/>
 				</View>
 			</View>
 		</View>

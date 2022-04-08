@@ -23,15 +23,15 @@ export const styles = StyleSheet.create({
       textAlign: "center",
     },
     content: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
     },
     item: {
       padding: 25,
       marginVertical: 8,
       flex:1,
-      marginHorizontal: 15,
+      marginHorizontal: 20,
     },
     safeArea: {
       flexDirection: "row",
@@ -39,15 +39,12 @@ export const styles = StyleSheet.create({
       justifyContent: 'space-between',
       display: "flex",
     },
-    buttonText: {
-      fontWeight: "700",
-      fontSize: 16,
-    },
     button: {
-      backgroundColor: "#6495ed",
+      backgroundColor: "#0782F9",
       padding: 10,
       borderRadius: 10,
       alignItems: "center",
-      marginHorizontal: 15,
+      marginTop: 5,
+      marginRight: 20
     },
   });

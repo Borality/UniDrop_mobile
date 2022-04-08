@@ -11,16 +11,11 @@ export const styles = StyleSheet.create({
       fontSize: 40,
       fontWeight: 'bold',
     },
-    separator: {
-      marginVertical: 30,
-      height: 1,
-      width: '80%',
-    },
     buttonContainer: {
-      width: "60%",
+      width: "80%",
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 40,
+      marginVertical: 20,
       backgroundColor: "#5D8AA8",
     },
     button: {
@@ -30,8 +25,4 @@ export const styles = StyleSheet.create({
       alignItems: "center",
       marginTop: 5,
     },
-    buttonText: {
-      fontWeight: "700",
-      fontSize: 16,
-    }
   });
