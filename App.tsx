@@ -1,31 +1,41 @@
 import * as React from "react";
-import { Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "./components/header";
-import tabOneScreen from "./screens/tabOneScreen/TabOneScreen";
-import tabTwoScreen from "./screens/tabTwoScreen/TabTwoScreen";
-import page4 from "./screens/sendFiles/SendFiles";
-import page5 from "./screens/sendText/SendText";
-import page6 from "./screens/selectDevices/SelectDevices";
-import page7 from "./screens/insertFiles/InsertFiles";
+//Screens
+import TabOneScreen from "./screens/tabOneScreen/TabOneScreen";
 import StartScreen from "./screens/StartScreen/StartScreen";
 import RoomID from "./screens/RoomID/RoomID";
-import page8 from "./screens/page8/Page8";
-import page9 from "./screens/page9/Page9";
-import yourRoomID from "./screens/yourRoomID/yourRoomID";
-
+import YourRoomID from "./screens/yourRoomID/yourRoomID";
+import Page4 from "./screens/sendFiles/SendFiles";
+import Page5 from "./screens/sendText/SendText";
+import Page6 from "./screens/selectDevices/SelectDevices";
+import Page7 from "./screens/insertFiles/InsertFiles";
+import Page8 from "./screens/page8/Page8";
+import Page9 from "./screens/page9/Page9";
 
 const Stack = createNativeStackNavigator();
+//Add all names and components here
+const Data = [
+	{ name: "StartScreen", component: StartScreen, key: 1},
+	{ name: "RoomID", component: RoomID, key: 2},
+	{ name: "yourRoomID", component: YourRoomID, key: 3},
+	{ name: "page4", component: Page4, key: 4},
+	{ name: "page5", component: Page5, key: 5},
+	{ name: "page6", component: Page6, key: 6},
+	{ name: "page7", component: Page7, key: 7},
+	{ name: "page8", component: Page8, key: 8},
+	{ name: "page9", component: Page9, key: 9},
 
+];
 
 export default function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator>
 				<Stack.Screen
-					name="tabOneScreen"
-					component={tabOneScreen}
+					name="TabOneScreen"
+					component={TabOneScreen}
 					options={{
 						headerShown: true,
 						title: "UniDrop",
@@ -35,76 +45,18 @@ export default function App() {
 						headerTintColor: "#fff",
 					}}
 				/>
-				<Stack.Screen
-					name="tabTwoScreen"
-					component={tabTwoScreen}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="StartScreen"
-					component={StartScreen}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="RoomID"
-					component={RoomID}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page5"
-					component={page5}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page6"
-					component={page6}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page7"
-					component={page7}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page8"
-					component={page8}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page9"
-					component={page9}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="page4"
-					component={page4}
-					options={{
-						headerShown: false,
-					}}
-				/>
-				<Stack.Screen
-					name="yourRoomID"
-					component={yourRoomID}
-					options={{
-						headerShown: false,
-					}}
-				/>
+				{Data.map((data: any) => {
+					return (
+						<Stack.Screen
+							name={data.name}
+							component={data.component}
+							key = {data.key}
+							options={{
+								headerShown: false,
+							}}
+						/>
+					);
+				})}
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

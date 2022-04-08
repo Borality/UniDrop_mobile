@@ -63,7 +63,7 @@ const Item = ({
 	</TouchableOpacity>
 );
 
-export default function page5({ navigation }: { navigation: any }) {
+export default function Page8({ navigation }: { navigation: any }) {
 	const [selectedId, setSelectedId] = useState(null);
 	const renderItem = ({ item }: { item: any }) => {
 		const backgroundColor = item.id === selectedId ? "#87ceeb" : "#6495ed";

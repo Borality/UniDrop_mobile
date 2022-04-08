@@ -1,50 +1,46 @@
 import * as React from "react";
 import { styles } from "./TabOneScreen.styles";
-import { TouchableOpacity, Button, Text, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-
-const MyButton = ({
-	page,
-	title,
-	navigation,
-}: {
-	page: string;
-	title: string;
-	navigation: any;
-}) => {
-	return (
-		<TouchableOpacity
-			style={styles.button}
-			onPress={() => navigation.navigate(page)}
-		>
-			<Text style = {styles.buttonText} > {title} </Text>
-		</TouchableOpacity>
-	);
-};
+import { Text, View } from "react-native";
+import { Button } from "react-native-elements";
 
 export default function TabOneScreen({ navigation }: { navigation: any }) {
+	//Add buttons here and it will auto create the buttons
+	const Data = [
+		{
+			title: "Page 1",
+			component: "StartScreen",
+			navigation: navigation,
+			key: 1,
+		},
+		{ title: "Page 2", component: "RoomID", navigation: navigation, key: 1 },
+		{
+			title: "Page 3",
+			component: "yourRoomID",
+			navigation: navigation,
+			key: 3,
+		},
+		{ title: "Page 4", component: "page5", navigation: navigation, key: 4 },
+		{ title: "Page 5", component: "page6", navigation: navigation, key: 5 },
+		{ title: "Page 6", component: "page7", navigation: navigation, key: 6 },
+		{ title: "Page 7", component: "page8", navigation: navigation, key: 7 },
+		{ title: "Page 8", component: "page9", navigation: navigation, key: 8 },
+		{ title: "Page 9", component: "page9", navigation: navigation, key: 9 },
+	];
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>UniDrop</Text>
-			<View
-				style={styles.separator}
-			/>
-
 			<View style={styles.buttonContainer}>
-				<MyButton title = "Next" page = "tabTwoScreen" navigation = {navigation}/>
-				{/*Add pages here */}
-				<MyButton title="Page 1" page="StartScreen" navigation={navigation} />
-				<MyButton title="Page 2" page="RoomID" navigation={navigation} />
-				<MyButton title="Page 4" page="page4" navigation={navigation} />
-				<MyButton title="Page 5" page="page5" navigation={navigation} />
-				<MyButton title="Page 6" page="page6" navigation={navigation} />
-				<MyButton title="Page 7" page="page7" navigation={navigation} />
-				<MyButton title="Page 8" page="page8" navigation={navigation} />
-				<MyButton title="Page 9" page="page9" navigation={navigation} />
+				{Data.map((data: any) => {
+					return (
+						<Button
+							buttonStyle={styles.button}
+							title={data.title}
+							onPress={() => navigation.navigate(data.component)}
+							key={data.key}
+						/>
+					);
+				})}
 			</View>
-			<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
-				<AntDesign name="back" size={50} />
-			</TouchableOpacity>
 		</View>
 	);
 }

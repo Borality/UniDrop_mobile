@@ -13,11 +13,10 @@ import {
 } from 'react-native';
 
 
-export default function yourRoomID({navigation}: {navigation: any}) {
-    const route = useRoute();
+export default function YourRoomID({navigation}: {navigation: any}) {
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 50}}> Your RoomID # is: {route.params.IDnumber}</Text>
+      <Text style={{ fontSize: 50}}> Your RoomID # is:</Text>
       <TouchableOpacity key = {2} onPress={() => navigation.goBack()}>
         <Text style={styles.button} >Last page </Text>
       </TouchableOpacity>

@@ -4,7 +4,7 @@ import { styles } from "./InsertFiles.styles";
 import { AntDesign } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 
-export default function page7({ navigation }: { navigation: any }) {
+export default function Page7({ navigation }: { navigation: any }) {
 	const [image, setImage] = useState<any | null>(null);
 	//For picking image and displaying later with image as uri
 	const pickImage = async () => {

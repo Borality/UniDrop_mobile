@@ -22,7 +22,7 @@ const MyButton = ({
 	);
 };
 
-export default function TabOneScreen({ navigation }: { navigation: any }) {
+export default function Page4({ navigation }: { navigation: any }) {
 	return (
 		<View style={styles.container}>
 			<Text style={styles.title}>Choose an option:</Text>
