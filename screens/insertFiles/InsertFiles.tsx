@@ -4,9 +4,11 @@ import { styles } from "./InsertFiles.styles";
 import { AntDesign } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { Button } from "react-native-elements";
+import {getStorage, ref, uploadBytesResumable} from "firebase/storage";
 
 export default function Page7({ navigation }: { navigation: any }) {
 	const [image, setImage] = useState<any | null>(null);
+	const [mediaType, setMediaType] = useState<any | null>(null);
 	//For picking image and displaying later with image as uri
 	const pickImage = async () => {
 		// No permissions request is necessary for launching the image library
@@ -18,15 +20,33 @@ export default function Page7({ navigation }: { navigation: any }) {
 		});
 
 		console.log(result);
-
+		var metadataVideo = {
+			contentType: 'video/quicktime',
+			contentDisposition: ''		
+		};	
 		if (!result.cancelled) {
 			setImage(result.uri);
+			const storage = getStorage();
+			const storageRef = ref(storage, "files/testVid");
+			const img = await fetch(result.uri);
+			const bytes = await img.blob();
+			//Code for images only
+			if (result.type == "image") {
+				uploadBytesResumable(storageRef, bytes);
+				console.log("image");
+			}
+			//Code for video only
+			else if (result.type == "video"){
+				uploadBytesResumable(storageRef, bytes, metadataVideo);
+				console.log("video")
+			}
 		}
 	};
 	return (
 		<View style={styles.container}>
 			<View>
 				<Text style={styles.title}>Insert files:</Text>
+
 				<Button
 						buttonStyle={styles.button}
 						title="Choose Photo"
@@ -42,9 +62,7 @@ export default function Page7({ navigation }: { navigation: any }) {
 						onPress={() => navigation.navigate("page8")}
 					/>
 				</View>
-				{image && (
-					<Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
-				)}
+				
 			</View>
 		</View>
 	);

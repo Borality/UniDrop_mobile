@@ -7,9 +7,13 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#5D8AA8',
     },
+    mainContainer: {
+      width: "60%"
+    },
     title: {
       fontSize: 40,
       fontWeight: 'bold',
+      textAlign: "center",
     },
     separator: {
       marginVertical: 30,

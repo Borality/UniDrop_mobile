@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
 import { styles } from "./Login-styles";
 import { Input, Button } from "react-native-elements";
-import FormSucess from'../Components/FormSuccess';
 //Firebase
 import { authentication } from "../../firebase/firebase-config";
 import {
@@ -10,6 +9,8 @@ import {
 	signInWithEmailAndPassword,
 	onAuthStateChanged,
 } from "firebase/auth";
+import FormSuccess from '../../components/FormSuccess';
+
 
 
 
@@ -35,32 +36,38 @@ const Login = ({ navigation }: { navigation: any }) => {
 	const [isLoading,setIsLoading] = useState(false);
 
 	const registerUser = () => {
+		setIsLoading(true);
 		createUserWithEmailAndPassword(authentication, email, password)
 			.then((userCredential) => {
 				// Signed in
 				setIsSignedIn(true);
-				console.log(userCredential.user);
+				console.log("User signed in");
+				setIsLoading(false);
 				setError("");
 				// ...
 			})
 			.catch((error) => {
 				console.log(error.message);
+				setIsLoading(false);
 				setError(error.message);
 				// ..
 			});
 	};
 
 	const signInUser = () => {
+		setIsLoading(true);
 		signInWithEmailAndPassword(authentication, email, password)
 			.then((userCredential) => {
 				// Signed in
-				setIsSignedIn(true);
-				console.log(userCredential.user);
+				setIsSignedIn(false);
+				console.log("User signed in");
+				setIsLoading(true);
 				setError("");
 				// ...
 			})
 			.catch((error) => {
 				console.log(error.message);
+				setIsLoading(false);
 				setError(error.message);
 			});
 	};
@@ -87,6 +94,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 				<Button style={{ marginTop: 5 }} title="Sign in" onPress={signInUser} />
 				<Text>{error}</Text>
 			</View>
+
 			{isLoading == true?
 				<FormSuccess/>
 				:
