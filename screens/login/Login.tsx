@@ -2,6 +2,7 @@ import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
 import { styles } from "./Login-styles";
 import { Input, Button } from "react-native-elements";
+import FormSucess from'../Components/FormSuccess';
 //Firebase
 import { authentication } from "../../firebase/firebase-config";
 import {
@@ -9,6 +10,8 @@ import {
 	signInWithEmailAndPassword,
 	onAuthStateChanged,
 } from "firebase/auth";
+
+
 
 const Login = ({ navigation }: { navigation: any }) => {
 	//If user logged in then go to next page
@@ -29,6 +32,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const [isLoading,setIsLoading] = useState(false);
 
 	const registerUser = () => {
 		createUserWithEmailAndPassword(authentication, email, password)
@@ -83,6 +87,11 @@ const Login = ({ navigation }: { navigation: any }) => {
 				<Button style={{ marginTop: 5 }} title="Sign in" onPress={signInUser} />
 				<Text>{error}</Text>
 			</View>
+			{isLoading == true?
+				<FormSuccess/>
+				:
+				null
+			}
 		</View>
 	);
 };
