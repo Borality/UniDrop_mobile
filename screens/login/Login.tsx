@@ -59,9 +59,9 @@ const Login = ({ navigation }: { navigation: any }) => {
 		signInWithEmailAndPassword(authentication, email, password)
 			.then((userCredential) => {
 				// Signed in
-				setIsSignedIn(false);
+				setIsSignedIn(true);
 				console.log("User signed in");
-				setIsLoading(true);
+				setIsLoading(false);
 				setError("");
 				// ...
 			})

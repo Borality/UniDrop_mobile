@@ -7,6 +7,7 @@ import { Button } from "react-native-elements";
 //Firebase
 import { authentication } from "../../firebase/firebase-config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import FormSuccess from '../../components/FormSuccess';
 
 export default function TabOneScreen({ navigation }: { navigation: any }) {
 	//Add buttons here and it will auto create the buttons
@@ -33,6 +34,7 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 	];
 	const [isSignedIn, setIsSignedIn] = useState(false);
 	const [error, setError] = useState("");
+	const [isLoading,setIsLoading] = useState(false);
 	//Checks if user is signed in
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(authentication, (user: any) => {
@@ -84,6 +86,11 @@ export default function TabOneScreen({ navigation }: { navigation: any }) {
 					onPress={signOutUser}
 				/>
 			</View>
+			{isLoading == true?
+				<FormSuccess/>
+				:
+				null
+			}
 		</View>
 	);
 }
