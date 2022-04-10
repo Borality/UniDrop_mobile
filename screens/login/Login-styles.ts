@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
     container: {
@@ -11,20 +12,12 @@ export const styles = StyleSheet.create({
       fontSize: 40,
       fontWeight: 'bold',
     },
-    buttonContainer: {
-      width: "60%",
-      justifyContent: 'center',
-      alignItems: 'center',
-      marginTop: 10,
-    },
     button: {
       backgroundColor: "#0782F9",
-      padding: 10,
       borderRadius: 10,
-      alignItems: "center",
       marginTop: 5,
     },
     inputContainer: {
-        width: "60%",
+        width: (Platform.OS === 'web') ? "20%": "60%",
     }
   });

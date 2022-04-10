@@ -35,7 +35,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 			.then((userCredential) => {
 				// Signed in
 				setIsSignedIn(true);
-				console.log(userCredential.user);
+				console.log("User signed in");
 				setError("");
 				// ...
 			})
@@ -51,7 +51,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 			.then((userCredential) => {
 				// Signed in
 				setIsSignedIn(true);
-				console.log(userCredential.user);
+				console.log("User signed in");
 				setError("");
 				// ...
 			})
