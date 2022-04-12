@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { View, Text, TextInput,Button } from "react-native";
 import {styles} from "./yourRoomID.styles";
-import RoomID from "../RoomID/RoomID";
+import RoomID from "../roomID/RoomID";
 import {
   StyleSheet,
   SafeAreaView,

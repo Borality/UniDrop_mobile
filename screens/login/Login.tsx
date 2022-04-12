@@ -23,7 +23,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 				// https://firebase.google.com/docs/reference/js/firebase.User
 				// ...
 				//Use replace so user cannot go back with button
-				navigation.replace("tabOneScreen");
+				navigation.replace("Start");
 			}
 		});
 		return unsubscribe;

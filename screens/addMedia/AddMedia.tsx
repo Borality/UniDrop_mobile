@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { styles } from "./InsertFiles.styles";
+import { styles } from "./AddMedia.styles";
 import { AntDesign } from "@expo/vector-icons";
 import * as ImagePicker from "expo-image-picker";
 import { Button } from "react-native-elements";
@@ -77,7 +77,7 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 	return (
 		<View style={styles.container}>
 			<View>
-				<Text style={styles.title}>Insert files: {roomNumber}</Text>
+				<Text style={styles.title}>Add Media</Text>
 
 				<Button
 					buttonStyle={styles.button}

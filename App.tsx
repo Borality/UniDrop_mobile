@@ -4,22 +4,22 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Header from "./components/header";
 //Screens
 import TabOneScreen from "./screens/tabOneScreen/TabOneScreen";
-import StartScreen from "./screens/StartScreen/StartScreen";
-import RoomID from "./screens/RoomID/RoomID";
+import Start from "./screens/start/Start";
+import RoomID from "./screens/roomID/RoomID";
 import YourRoomID from "./screens/yourRoomID/yourRoomID";
 import Page4 from "./screens/sendText/SendText";
 import Page5 from "./screens/sendFiles/SendFiles";
 import Page6 from "./screens/selectDevices/SelectDevices";
-import Page7 from "./screens/insertFiles/InsertFiles";
-import Page8 from "./screens/page8/Page8";
+import Page7 from "./screens/addMedia/AddMedia";
+import Page8 from "./screens/viewMedia/ViewMedia";
 import Page9 from "./screens/page9/Page9";
 import Login from "./screens/login/Login";
 
 const Stack = createNativeStackNavigator();
 //Add all names and components here
 const Data = [
-	{ name: "tabOneScreen", component: TabOneScreen, key: 0},
-	{ name: "startScreen", component: StartScreen, key: 1},
+	//{ name: "tabOneScreen", component: TabOneScreen, key: 0},
+	{ name: "Start", component: Start, key: 1},
 	{ name: "roomID", component: RoomID, key: 2},
 	{ name: "yourRoomID", component: YourRoomID, key: 3},
 	{ name: "page4", component: Page4, key: 4},

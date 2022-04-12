@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { styles } from "./Page8.styles";
+import { styles } from "./ViewMedia.styles";
 import { AntDesign } from "@expo/vector-icons";
 import { Button } from "react-native-elements";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
@@ -42,23 +42,21 @@ export default function Page8({
 	const [users, setUsers] = useState<any | null>(null);
 	
 	useEffect(() => {
-		const some = async () => {
-			const docRef = doc(db, "users", "216609360982");
-			const docSnap = await getDoc(docRef);
-
-			if (docSnap.exists()) {
-				console.log("Document data:", docSnap.data());
-			} else {
-				// doc.data() will be undefined in this case
-				console.log("No such document!");
-			}
+		const func = async () => {
+			const storage = getStorage();
+			const reference = ref(storage, pathName);
+			await getDownloadURL(reference).then((x) => {
+				setUrl(x);
+			})
 		};
-		some();
+		if (url == undefined) {func()};
 	}, []);
+
+
 	return (
 		<View style={styles.container}>
 			<View style={styles.containerMain}>
-				<Text style={styles.title}>Review files {user}</Text>
+				<Text style={styles.title}>Review files</Text>
 				<View style={styles.buttonContainer}>
 					<TouchableOpacity onPress={() => navigation.goBack()}>
 						<AntDesign name="back" size={50} />
@@ -66,11 +64,12 @@ export default function Page8({
 					<Button
 						buttonStyle={styles.button}
 						title="Next"
-						onPress={() => navigation.navigate("page8")}
+						onPress={() => navigation.navigate("Start")}
 					/>
 				</View>
-
-				<Image style={{ width: "50%", height: "50%" }} source={{ uri: url }} />
+				<View style = {{marginVertical: 10, width: "100%", height: "50%" }}>
+				<Image style={{ width: "100%", height: "100%" }} source={{ uri: url }} />
+				</View>
 			</View>
 		</View>
 	);
