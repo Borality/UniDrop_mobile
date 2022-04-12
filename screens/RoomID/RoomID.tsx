@@ -2,7 +2,13 @@ import React, { useState, useEffect } from "react";
 import { View, Text } from "react-native";
 import { Button } from "react-native-elements";
 import { styles } from "./RoomID.styles";
+<<<<<<< HEAD
 import { onAuthStateChanged } from "firebase/auth";
+=======
+import {
+	onAuthStateChanged,
+} from "firebase/auth";
+>>>>>>> 6848142be2b02baaba7f517a06f38194cbaddb38
 //firebase
 import { db, authentication } from "../../firebase/firebase-config";
 import { doc, setDoc } from "firebase/firestore/lite";
@@ -60,6 +66,7 @@ export default function RoomID({ navigation }: { navigation: any }) {
 					onPress={() => navigation.navigate("page7", {roomNumber: roomID})}
 				/>
 			</View>
+      
 		</View>
 	);
 }

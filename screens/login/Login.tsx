@@ -9,6 +9,10 @@ import {
 	signInWithEmailAndPassword,
 	onAuthStateChanged,
 } from "firebase/auth";
+import FormSuccess from '../../components/FormSuccess';
+
+
+
 
 const Login = ({ navigation }: { navigation: any }) => {
 	//If user logged in then go to next page
@@ -29,34 +33,41 @@ const Login = ({ navigation }: { navigation: any }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
+	const [isLoading,setIsLoading] = useState(false);
 
 	const registerUser = () => {
+		setIsLoading(true);
 		createUserWithEmailAndPassword(authentication, email, password)
 			.then((userCredential) => {
 				// Signed in
 				setIsSignedIn(true);
 				console.log("User signed in");
+				setIsLoading(false);
 				setError("");
 				// ...
 			})
 			.catch((error) => {
 				console.log(error.message);
+				setIsLoading(false);
 				setError(error.message);
 				// ..
 			});
 	};
 
 	const signInUser = () => {
+		setIsLoading(true);
 		signInWithEmailAndPassword(authentication, email, password)
 			.then((userCredential) => {
 				// Signed in
 				setIsSignedIn(true);
 				console.log("User signed in");
+				setIsLoading(false);
 				setError("");
 				// ...
 			})
 			.catch((error) => {
 				console.log(error.message);
+				setIsLoading(false);
 				setError(error.message);
 			});
 	};
@@ -83,6 +94,12 @@ const Login = ({ navigation }: { navigation: any }) => {
 				<Button style={{ marginTop: 5 }} title="Sign in" onPress={signInUser} />
 				<Text>{error}</Text>
 			</View>
+
+			{isLoading == true?
+				<FormSuccess/>
+				:
+				null
+			}
 		</View>
 	);
 };
