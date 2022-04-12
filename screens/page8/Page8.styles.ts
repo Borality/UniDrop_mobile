@@ -7,35 +7,24 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       backgroundColor: '#5D8AA8',
     },
+    containerMain: {
+      width: "60%",
+    },
     title: {
       fontSize: 40,
       fontWeight: 'bold',
       textAlign: "center",
     },
-    devicesTitle: {
-      fontSize: 12,
-      textAlign: "center",
-    },
-    devicesIcons: {
-      display: "flex",
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    content: {
-      flexDirection: 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-    },
-    item: {
-      padding: 35,
-      marginVertical: 8,
-      flex:1,
-      marginHorizontal: 6,
-    },
-    safeArea: {
+    buttonContainer: {
       flexDirection: "row",
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
     },
+    button: {
+      backgroundColor: "#0782F9",
+      padding: 10,
+      borderRadius: 10,
+      alignItems: "center",
+      marginTop: 5,
+      },
   });

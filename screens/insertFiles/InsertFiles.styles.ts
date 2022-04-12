@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
 		padding: 15,
 		backgroundColor: "white",
 	},
-	content: {
+	buttonContainer: {
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",

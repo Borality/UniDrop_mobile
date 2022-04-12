@@ -1,109 +1,76 @@
-import React, { useState } from "react";
-import {
-	View,
-	Text,
-	Button,
-	TouchableOpacity,
-	Image,
-	SafeAreaView,
-	FlatList,
-} from "react-native";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { styles } from "./Page8.styles";
-import { AntDesign } from '@expo/vector-icons'; 
-import { MaterialIcons } from '@expo/vector-icons'; 
+import { AntDesign } from "@expo/vector-icons";
+import { Button } from "react-native-elements";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
+import {
+	collectionGroup,
+	query,
+	where,
+	getDoc,
+	doc,
+	collection,
+} from "firebase/firestore";
+import { db, authentication } from "../../firebase/firebase-config";
+import { onAuthStateChanged } from "firebase/auth";
 
-const DATA = [
-	{
-		id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-		title: "iPhone",
-		icon: "phone-iphone",
-	},
-	{
-		id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-		title: "Android",
-		icon: "android",
-	},
-	{
-		id: "58694a0f-3da1-471f-bd96-145571e29d72",
-		title: "Windows PC",
-		icon: "desktop-windows",
-	},
-	{
-		id: "58694a0f-3da1-471f-bd96-145571e29d74",
-		title: "Macintosh",
-		icon: "desktop-mac",
-	},
-];
-
-const Item = ({
-	item,
-	onPress,
-	backgroundColor,
-	textColor,
+export default function Page8({
+	navigation,
+	route,
 }: {
-	item: any;
-	onPress: any;
-	backgroundColor: any;
-	textColor: any;
-}) => (
-	<TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-		<Text style={[styles.devicesTitle, textColor]}>{item.title}</Text>
-		{item.icon == "phone-iphone" && (
-			<MaterialIcons style={styles.devicesIcons} name={item.icon} size={50} />
-		)}
-		{item.icon == "android" && (
-			<AntDesign style={styles.devicesIcons} name={item.icon} size={50} />
-		)}
-		{item.icon == "desktop-windows" && (
-			<MaterialIcons style={styles.devicesIcons} name={item.icon} size={50} />
-		)}
-		{item.icon == "desktop-mac" && (
-			<MaterialIcons style={styles.devicesIcons} name={item.icon} size={50} />
-		)}
-	</TouchableOpacity>
-);
+	navigation: any;
+	route: any;
+}) {
+	const [user, setUser] = useState("");
+	useEffect(() => {
+		const unsubscribe = onAuthStateChanged(authentication, (user: any) => {
+			if (user) {
+				// User is signed in, see docs for a list of available properties
+				// https://firebase.google.com/docs/reference/js/firebase.User
+				// ...
+				//Use replace so user cannot go back with button
+				setUser(user.uid);
+			}
+		});
+		return unsubscribe;
+	}, []);
 
-export default function Page8({ navigation }: { navigation: any }) {
-	const [selectedId, setSelectedId] = useState(null);
-	const renderItem = ({ item }: { item: any }) => {
-		const backgroundColor = item.id === selectedId ? "#87ceeb" : "#6495ed";
-		const color = item.id === selectedId ? "white" : "black";
+	const { pathName } = route.params;
+	//Will store url
+	const [url, setUrl] = useState<any | null>(null);
+	const [users, setUsers] = useState<any | null>(null);
+	
+	useEffect(() => {
+		const some = async () => {
+			const docRef = doc(db, "users", "216609360982");
+			const docSnap = await getDoc(docRef);
 
-		return (
-			<Item
-				item={item}
-				onPress={() => setSelectedId(item.id)}
-				backgroundColor={{ backgroundColor }}
-				textColor={{ color }}
-			/>
-		);
-	};
-
+			if (docSnap.exists()) {
+				console.log("Document data:", docSnap.data());
+			} else {
+				// doc.data() will be undefined in this case
+				console.log("No such document!");
+			}
+		};
+		some();
+	}, []);
 	return (
 		<View style={styles.container}>
-			<View>
-				<Text style={styles.title}>Review files:</Text>
-				<View style={styles.content}>
-					<SafeAreaView style={styles.safeArea}>
-						<FlatList
-							data={DATA}
-							renderItem={renderItem}
-							keyExtractor={(item) => item.id}
-							extraData={selectedId}
-							numColumns={2}
-						/>
-					</SafeAreaView>
-				</View>
-				<View style={styles.content}>
-					<TouchableOpacity key={1} onPress={() => navigation.goBack()}>
+			<View style={styles.containerMain}>
+				<Text style={styles.title}>Review files {user}</Text>
+				<View style={styles.buttonContainer}>
+					<TouchableOpacity onPress={() => navigation.goBack()}>
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
 					<Button
-						title="Send"
-						color="#6495ed"
-						onPress={() => navigation.navigate("page9")}
+						buttonStyle={styles.button}
+						title="Next"
+						onPress={() => navigation.navigate("page8")}
 					/>
 				</View>
+
+				<Image style={{ width: "50%", height: "50%" }} source={{ uri: url }} />
 			</View>
 		</View>
 	);
