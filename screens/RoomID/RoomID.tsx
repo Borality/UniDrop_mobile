@@ -14,15 +14,14 @@ export default function RoomID({ navigation }: { navigation: any }) {
 	const { user } = getUser();
 
 	const setData = async () => {
+		//Makes id number
+		setRoomID(Math.floor(Math.random() * Date.now()));
+		//Uploads to firebase database as users/{roomID}
 		const ref = doc(db, "users", `${roomID}`);
 		await setDoc(ref, {
 			roomNumber: roomID,
 			userID: user,
 		});
-	};
-
-	const makeID = () => {
-		setRoomID(Math.floor(Math.random() * Date.now()));
 	};
 
 	return (
@@ -32,11 +31,6 @@ export default function RoomID({ navigation }: { navigation: any }) {
 				<Button
 					buttonStyle={stylesMain.button}
 					title="Make ID"
-					onPress={makeID}
-				/>
-				<Button
-					buttonStyle={stylesMain.button}
-					title="Upload data"
 					onPress={setData}
 				/>
 				<View style={styles.buttonContainer}>
