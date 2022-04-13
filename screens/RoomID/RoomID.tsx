@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Button } from "react-native-elements";
+import { stylesMain } from "../../components/components.styles";
 import { styles } from "./RoomID.styles";
 //firebase
-import { onAuthStateChanged } from "firebase/auth";
-import { db, authentication } from "../../firebase/firebase-config";
+import { db } from "../../firebase/firebase-config";
 import { doc, setDoc } from "firebase/firestore";
 import { AntDesign } from "@expo/vector-icons";
 import getUser from "../../firebase/getUser";
@@ -26,12 +26,16 @@ export default function RoomID({ navigation }: { navigation: any }) {
 	};
 
 	return (
-		<View style={styles.container}>
-			<View style={styles.mainContainer}>
-				<Text style={styles.title}>RoomID</Text>
-				<Button style={{ marginTop: 5 }} title="Make ID" onPress={makeID} />
+		<View style={stylesMain.container}>
+			<View style={stylesMain.mainContainer}>
+				<Text style={stylesMain.title}>Room ID</Text>
 				<Button
-					style={{ marginTop: 5 }}
+					buttonStyle={stylesMain.button}
+					title="Make ID"
+					onPress={makeID}
+				/>
+				<Button
+					buttonStyle={stylesMain.button}
 					title="Upload data"
 					onPress={setData}
 				/>
@@ -40,7 +44,7 @@ export default function RoomID({ navigation }: { navigation: any }) {
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
 					<Button
-						buttonStyle={styles.button}
+						buttonStyle={stylesMain.button}
 						title="Next"
 						onPress={() =>
 							navigation.navigate("AddMedia", { roomNumber: roomID })

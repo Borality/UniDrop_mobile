@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {stylesMain} from "../../components/components.styles";
 import { styles } from "./ShowMedia.styles";
 //Components
 import { View, Text, TouchableOpacity, Image } from "react-native";
@@ -59,15 +60,15 @@ export default function Page8({
 	}, []);
 
 	return (
-		<View style={styles.container}>
-			<View style={styles.containerMain}>
-				<Text style={styles.title}>Review files</Text>
+		<View style={stylesMain.container}>
+			<View style={stylesMain.mainContainer}>
+				<Text style={stylesMain.title}>Review files</Text>
 				<View style={styles.buttonContainer}>
 					<TouchableOpacity onPress={() => navigation.goBack()}>
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
 					<Button
-						buttonStyle={styles.button}
+						buttonStyle={stylesMain.button}
 						title="Next"
 						onPress={() => navigation.navigate("Start")}
 					/>

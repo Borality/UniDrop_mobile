@@ -1,5 +1,6 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
+import {stylesMain} from "../../components/components.styles";
 import { styles } from "./Login-styles";
 import { Input, Button } from "react-native-elements";
 //Firebase
@@ -60,8 +61,8 @@ const Login = ({ navigation }: { navigation: any }) => {
 	};
 
 	return (
-		<View style={styles.container}>
-			<View style={styles.inputContainer}>
+		<View style={stylesMain.container}>
+			<View style={stylesMain.mainContainer}>
 				<Input
 					placeholder="Email"
 					value={email}
@@ -74,11 +75,11 @@ const Login = ({ navigation }: { navigation: any }) => {
 					onChangeText={(text) => setPassword(text)}
 				/>
 				<Button
-					style={{ marginTop: 5 }}
+					buttonStyle={stylesMain.button}
 					title="Register"
 					onPress={registerUser}
 				/>
-				<Button style={{ marginTop: 5 }} title="Sign in" onPress={signInUser} />
+				<Button buttonStyle = {stylesMain.button} title="Sign in" onPress={signInUser} />
 				<Text>{error}</Text>
 			</View>
 		</View>

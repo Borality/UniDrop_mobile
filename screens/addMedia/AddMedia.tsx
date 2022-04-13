@@ -1,4 +1,5 @@
 import React, { useState} from "react";
+import {stylesMain} from "../../components/components.styles";
 import { styles } from "./AddMedia.styles";
 //Expo
 import * as ImagePicker from "expo-image-picker";
@@ -68,12 +69,12 @@ export default function AddMedia({ navigation, route }: { navigation: any, route
 	};
 
 	return (
-		<View style={styles.container}>
-			<View>
-				<Text style={styles.title}>Insert files</Text>
+		<View style={stylesMain.container}>
+			<View style = {stylesMain.mainContainer}>
+				<Text style={stylesMain.title}>Insert files</Text>
 				<Button
-					buttonStyle={styles.button}
-					title="Choose Photo"
+					buttonStyle={stylesMain.button}
+					title="Choose file"
 					onPress={pickImage}
 				/>
 				<View style={styles.buttonContainer}>
@@ -81,7 +82,7 @@ export default function AddMedia({ navigation, route }: { navigation: any, route
 						<AntDesign name="back" size={50} />
 					</TouchableOpacity>
 					<Button
-						buttonStyle={styles.button}
+						buttonStyle={stylesMain.button}
 						title="Next"
 						onPress={nextAndSetData}
 					/>

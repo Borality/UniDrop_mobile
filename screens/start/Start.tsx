@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
+import {stylesMain} from "../../components/components.styles";
 import { styles } from "./Start.styles";
-import { TouchableOpacity, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { Button } from "react-native-elements";
 import { authentication } from "../../firebase/firebase-config";
-import { onAuthStateChanged, signOut } from "firebase/auth";
+import { signOut } from "firebase/auth";
 
 export default function StartScreen({ navigation }: { navigation: any }) {
 	const [isSignedIn, setIsSignedIn] = useState(false);
 	const [error, setError] = useState("");
-	const [isLoading,setIsLoading] = useState(false);
+
 	const signOutUser = () => {
 		signOut(authentication)
 			.then(() => {
@@ -24,20 +25,22 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 				setError(error.message);
 			});
 	};
-	
+
 	return (
-		<View style={styles.container}>
-			<Text style={styles.title}>Start Sharing</Text>
-			<Button
-				buttonStyle={styles.button}
-				title="Next"
-				onPress={() => navigation.navigate("RoomID")}
-			/>
-			<Button
-					buttonStyle={styles.button}
+		<View style={stylesMain.container}>
+			<View style={stylesMain.mainContainer}>
+				<Text style={stylesMain.title}>Start Sharing</Text>
+				<Button
+					buttonStyle={stylesMain.button}
+					title="Next"
+					onPress={() => navigation.navigate("RoomID")}
+				/>
+				<Button
+					buttonStyle={stylesMain.button}
 					title="Sign out"
 					onPress={signOutUser}
-			/>
+				/>
+			</View>
 		</View>
 	);
 }
