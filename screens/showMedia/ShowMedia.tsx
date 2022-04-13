@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
 import { styles } from "./ShowMedia.styles";
-import { AntDesign } from "@expo/vector-icons";
+//Components
+import { View, Text, TouchableOpacity, Image } from "react-native";
 import { Button } from "react-native-elements";
+//Icons
+import { AntDesign } from "@expo/vector-icons";
+//Firebase
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import {
-	collectionGroup,
 	query,
 	where,
-	getDoc,
-	doc,
 	collection,
 	getDocs,
 } from "firebase/firestore";
-import { db, authentication } from "../../firebase/firebase-config";
-import { onAuthStateChanged } from "firebase/auth";
+import { db} from "../../firebase/firebase-config";
+import getUser from "../../firebase/getUser";
 
 export default function Page8({
 	navigation,
@@ -23,24 +23,14 @@ export default function Page8({
 	navigation: any;
 	route: any;
 }) {
-	const [user, setUser] = useState("");
 	const { pathName } = route.params;
 	//Will store url
 	const [url, setUrl] = useState<any | null>(null);
 	const [users, setUsers] = useState<any | null>(null);
 
-	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(authentication, (user: any) => {
-			if (user) {
-				// User is signed in, see docs for a list of available properties
-				// https://firebase.google.com/docs/reference/js/firebase.User
-				// ...
-				//Use replace so user cannot go back with button
-				setUser(user.uid);
-			}
-		});
-		return unsubscribe;
-	}, []);
+	const {user} = getUser();
+
+	//For getting data from db
 	useEffect(() => {
 		const getText = async () => {
 			const q = query(collection(db, "users"), where("userID", "==", `${user}`));
@@ -54,6 +44,7 @@ export default function Page8({
 		getText();
 	});
 
+	//For getting url from server
 	useEffect(() => {
 		const func = async () => {
 			const storage = getStorage();

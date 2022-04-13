@@ -7,12 +7,13 @@ export const styles = StyleSheet.create({
 		justifyContent: "center",
 		backgroundColor: "#5D8AA8",
 	},
-  mainContainer: {
-    width: "60%"
-  },
+	mainContainer: {
+		width: "60%",
+	},
 	title: {
 		fontSize: 40,
 		fontWeight: "bold",
+		textAlign: "center",
 	},
 	item: {
 		padding: 15,
@@ -33,5 +34,5 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 		alignItems: "center",
 		marginTop: 5,
-	  },
+	},
 });

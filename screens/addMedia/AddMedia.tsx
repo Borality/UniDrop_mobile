@@ -1,35 +1,27 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import React, { useState} from "react";
 import { styles } from "./AddMedia.styles";
-import { AntDesign } from "@expo/vector-icons";
+//Expo
 import * as ImagePicker from "expo-image-picker";
+//Components
+import { View, Text, TouchableOpacity } from "react-native";
 import { Button } from "react-native-elements";
+//Icons
+import { AntDesign } from "@expo/vector-icons";
 //Firebase
 import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
-import { onAuthStateChanged } from "firebase/auth";
-import { db, authentication } from "../../firebase/firebase-config";
-import { doc, setDoc, updateDoc} from "firebase/firestore";
+import { db } from "../../firebase/firebase-config";
+import { doc, updateDoc} from "firebase/firestore";
+import getUser from "../../firebase/getUser";
 
-export default function Page7({ navigation, route }: { navigation: any, route: any}) {
+export default function AddMedia({ navigation, route }: { navigation: any, route: any}) {
 	//Stores image for view
 	const [image, setImage] = useState<any | null>(null);
-	//Setting mediaType
-	const [mediaType, setMediaType] = useState<any | null>(null);
-	const [user, setUser] = useState("");
+	//Url path
 	const [path, setPath] = useState("");
+	//Previous page room number
 	const { roomNumber } = route.params;
-	useEffect(() => {
-		const unsubscribe = onAuthStateChanged(authentication, (user: any) => {
-			if (user) {
-				// User is signed in, see docs for a list of available properties
-				// https://firebase.google.com/docs/reference/js/firebase.User
-				// ...
-				//Use replace so user cannot go back with button
-				setUser(user.uid);
-			}
-		});
-		return unsubscribe;
-	}, []);
+	//User id
+	const {user} = getUser();
 
 	const nextAndSetData = async () => {
 		const ref = doc(db, "users",`${roomNumber}`);
@@ -41,7 +33,6 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 
 	//For picking image and displaying later with image as uri
 	const pickImage = async () => {
-		// No permissions request is necessary for launching the image library
 		let result = await ImagePicker.launchImageLibraryAsync({
 			mediaTypes: ImagePicker.MediaTypeOptions.All,
 			allowsEditing: true,
@@ -50,6 +41,7 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 		});
 
 		console.log(result);
+		//Media type for iphone video
 		var metadataVideo = {
 			contentType: "video/quicktime",
 			contentDisposition: "",
@@ -67,18 +59,18 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 				uploadBytesResumable(storageRef, bytes);
 				console.log("image");
 			}
-			//Code for video only
+			//Code for video only on ios
 			else if (result.type == "video") {
 				uploadBytesResumable(storageRef, bytes, metadataVideo);
 				console.log("video");
 			}
 		}
 	};
+
 	return (
 		<View style={styles.container}>
 			<View>
 				<Text style={styles.title}>Insert files</Text>
-
 				<Button
 					buttonStyle={styles.button}
 					title="Choose Photo"

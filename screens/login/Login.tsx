@@ -15,9 +15,7 @@ const Login = ({ navigation }: { navigation: any }) => {
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(authentication, (user: any) => {
 			if (user) {
-				// User is signed in, see docs for a list of available properties
-				// https://firebase.google.com/docs/reference/js/firebase.User
-				// ...
+				//User is signed in, see docs for a list of available properties
 				//Use replace so user cannot go back with button
 				navigation.replace("Start");
 			}
