@@ -15,13 +15,15 @@ export default function RoomID({ navigation }: { navigation: any }) {
 
 	const setData = async () => {
 		//Makes id number
-		setRoomID(Math.floor(Math.random() * Date.now()));
+		const id = Math.floor(Math.random() * Date.now())
 		//Uploads to firebase database as users/{roomID}
-		const ref = doc(db, "users", `${roomID}`);
+		const ref = doc(db, "users", `${id}`);
 		await setDoc(ref, {
-			roomNumber: roomID,
+			roomNumber: id,
 			userID: user,
 		});
+		//Savings roomID
+		setRoomID(id);
 	};
 
 	return (
