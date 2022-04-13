@@ -16,7 +16,7 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 				setIsSignedIn(false);
 				setError("");
 				//Use replace so user cannot go back with button
-				navigation.replace("login");
+				navigation.replace("Login");
 			})
 			.catch((error) => {
 				// An error happened.
@@ -31,7 +31,7 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 			<Button
 				buttonStyle={styles.button}
 				title="Next"
-				onPress={() => navigation.navigate("roomID")}
+				onPress={() => navigation.navigate("RoomID")}
 			/>
 			<Button
 					buttonStyle={styles.button}

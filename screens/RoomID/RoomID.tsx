@@ -7,16 +7,10 @@ import {
 } from "firebase/auth";
 //firebase
 import { db, authentication } from "../../firebase/firebase-config";
-import { doc, setDoc } from "firebase/firestore/lite";
+import { doc, setDoc } from "firebase/firestore";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function RoomID({ navigation }: { navigation: any }) {
-	// const [IDnumber,setIDnumber] = useState<any | null>(null);
-	// const initiate = () => {
-	//   navigation.navigate("yourRoo mID", {
-	//     IDnumber: "test",
-	//   });
-	// };
+export default function RoomID({ navigation }: { navigation: any }) {	
 	const [roomID, setRoomID] = useState<any | null>(null);
 	const [user, setUser] = useState("");
 	useEffect(() => {
@@ -60,7 +54,7 @@ export default function RoomID({ navigation }: { navigation: any }) {
 					<Button
 						buttonStyle={styles.button}
 						title="Next"
-						onPress={() => navigation.navigate("page7", {roomNumber: roomID})}
+						onPress={() => navigation.navigate("AddMedia", {roomNumber: roomID})}
 					/>
 				</View>
 			</View>

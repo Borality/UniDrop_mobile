@@ -8,7 +8,7 @@ import { Button } from "react-native-elements";
 import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
 import { onAuthStateChanged } from "firebase/auth";
 import { db, authentication } from "../../firebase/firebase-config";
-import { doc, setDoc, updateDoc} from "firebase/firestore/lite";
+import { doc, setDoc, updateDoc} from "firebase/firestore";
 
 export default function Page7({ navigation, route }: { navigation: any, route: any}) {
 	//Stores image for view
@@ -31,12 +31,12 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 		return unsubscribe;
 	}, []);
 
-	const nextAndsetData = async () => {
+	const nextAndSetData = async () => {
 		const ref = doc(db, "users",`${roomNumber}`);
 		await updateDoc(ref, { 
 		  picturePath: path,
 		})
-		navigation.navigate("page8", {pathName: path})
+		navigation.navigate("ShowMedia", {pathName: path})
 	}
 
 	//For picking image and displaying later with image as uri
@@ -77,7 +77,7 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 	return (
 		<View style={styles.container}>
 			<View>
-				<Text style={styles.title}>Add Media</Text>
+				<Text style={styles.title}>Insert files</Text>
 
 				<Button
 					buttonStyle={styles.button}
@@ -91,7 +91,7 @@ export default function Page7({ navigation, route }: { navigation: any, route: a
 					<Button
 						buttonStyle={styles.button}
 						title="Next"
-						onPress={nextAndsetData}
+						onPress={nextAndSetData}
 					/>
 				</View>
 			</View>
