@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {stylesMain} from "../../components/components.styles";
-import { styles } from "./ShowMedia.styles";
+import {stylesMain} from "../../core-ui/components.styles";
+import { styles } from "./showMedia.styles";
 //Components
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { Button } from "react-native-elements";

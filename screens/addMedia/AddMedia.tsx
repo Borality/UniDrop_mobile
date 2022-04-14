@@ -1,6 +1,6 @@
 import React, { useState} from "react";
-import {stylesMain} from "../../components/components.styles";
-import { styles } from "./AddMedia.styles";
+import {stylesMain} from "../../core-ui/components.styles";
+import { styles } from "./addMedia.styles";
 //Expo
 import * as ImagePicker from "expo-image-picker";
 //Components

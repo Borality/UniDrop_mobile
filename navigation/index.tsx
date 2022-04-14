@@ -5,11 +5,11 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //Screens
-import Login from "../screens/login/Login";
-import Start from "../screens/start/Start";
-import RoomID from "../screens/roomID/RoomID";
-import AddMedia from "../screens/addMedia/AddMedia";
-import ShowMedia from "../screens/showMedia/ShowMedia";
+import Login from "../screens/Login/login";
+import Start from "../screens/Start/start";
+import RoomID from "../screens/RoomID/roomID";
+import AddMedia from "../screens/AddMedia/addMedia";
+import ShowMedia from "../screens/ShowMedia/showMedia";
 
 export default function Navigation() {
 	return (

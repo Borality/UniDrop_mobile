@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React, { useState, useEffect } from "react";
-import {stylesMain} from "../../components/components.styles";
-import { styles } from "./Login-styles";
+import {stylesMain} from "../../core-ui/components.styles";
+import { styles } from "./login-styles";
 import { Input, Button } from "react-native-elements";
 //Firebase
 import { authentication } from "../../firebase/firebase-config";

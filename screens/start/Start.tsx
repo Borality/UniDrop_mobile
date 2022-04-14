@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import {stylesMain} from "../../components/components.styles";
-import { styles } from "./Start.styles";
+import {stylesMain} from "../../core-ui/components.styles";
+import { styles } from "./start.styles";
 import { Text, View } from "react-native";
 import { Button } from "react-native-elements";
 import { authentication } from "../../firebase/firebase-config";
