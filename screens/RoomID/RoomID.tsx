@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Button } from "react-native-elements";
 import { stylesMain } from "../../core-ui/components.styles";
-import { styles } from "./roomID.styles";
+import { styles } from "./RoomID.styles";
 //firebase
 import { db } from "../../firebase/firebase-config";
 import { doc, setDoc } from "firebase/firestore";
