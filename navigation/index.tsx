@@ -5,12 +5,13 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 //Screens
-import Login from "../screens/Login/login";
-import Start from "../screens/Start/start";
-import RoomID from "../screens/RoomID/roomID";
-import AddMedia from "../screens/AddMedia/addMedia";
-import ShowMedia from "../screens/ShowMedia/showMedia";
-
+import Login from "../screens/Login/Login";
+import Start from "../screens/Start/Start";
+import RoomID from "../screens/RoomID/RoomID";
+import AddMedia from "../screens/AddMedia/AddMedia";
+import ShowMedia from "../screens/ShowMedia/ShowMedia";
+import {Room} from "../screens/Room"
+import {CreateRoom} from "../screens/CreateRoom/createRoom";
 export default function Navigation() {
 	return (
 		<NavigationContainer>
@@ -60,6 +61,13 @@ function RootNavigator() {
 			<Stack.Screen
 				name="ShowMedia"
 				component={ShowMedia}
+				options={{
+					headerShown: false,
+				}}
+			/>
+			<Stack.Screen
+				name="CreateRoom"
+				component={CreateRoom}
 				options={{
 					headerShown: false,
 				}}
