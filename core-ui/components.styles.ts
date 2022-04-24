@@ -10,10 +10,15 @@ export const stylesMain = StyleSheet.create({
       backgroundColor: colors.primary,
     },
     mainContainer: {
-      width: (Platform.OS === 'web') ? "20%": "60%",
+      width: (Platform.OS === 'web') ? "20%": "68%",
     },
     title: {
       fontSize: 40,
+      fontWeight: 'bold',
+      textAlign: 'center',
+    },
+    text: {
+      fontSize: 20,
       fontWeight: 'bold',
       textAlign: 'center',
     },

@@ -10,8 +10,12 @@ import Start from "../screens/Start/Start";
 import RoomID from "../screens/RoomID/RoomID";
 import AddMedia from "../screens/AddMedia/AddMedia";
 import ShowMedia from "../screens/ShowMedia/ShowMedia";
-import {Room} from "../screens/Room"
+import {Room} from "../screens/Room/room"
 import {CreateRoom} from "../screens/CreateRoom/createRoom";
+import {JoinRoom} from "../screens/JoinRoom/joinRoom";
+import FileShare from "../screens/FileShare/fileShare";
+
+
 export default function Navigation() {
 	return (
 		<NavigationContainer>
@@ -32,7 +36,7 @@ function RootNavigator() {
 					headerShown: true,
 					title: "UniDrop",
 					headerStyle: {
-						backgroundColor: "#1f1f1f",
+						backgroundColor: "#303846",
 					},
 					headerTintColor: "#fff",
 				}}
@@ -69,7 +73,21 @@ function RootNavigator() {
 				name="CreateRoom"
 				component={CreateRoom}
 				options={{
-					headerShown: false,
+					headerShown: true,
+				}}
+			/>
+			<Stack.Screen
+				name="JoinRoom"
+				component={JoinRoom}
+				options={{
+					headerShown: true,
+				}}
+			/>
+			<Stack.Screen
+				name="FileShare"
+				component={FileShare}
+				options={{
+					headerShown: true,
 				}}
 			/>
 		</Stack.Navigator>

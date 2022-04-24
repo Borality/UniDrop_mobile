@@ -40,7 +40,16 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 					title="Sign out"
 					onPress={signOutUser}
 				/>
-				<Button buttonStyle = {stylesMain.button} title = "Create Room" onPress={() => navigation.navigate("CreateRoom")}/>
+				<Button
+					buttonStyle={stylesMain.button}
+					title="Create room"
+					onPress={() => navigation.navigate("CreateRoom")}
+				/>
+				<Button
+					buttonStyle={stylesMain.button}
+					title="Join room"
+					onPress={() => navigation.navigate("JoinRoom")}
+				/>
 			</View>
 		</View>
 	);
