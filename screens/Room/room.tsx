@@ -16,6 +16,13 @@ type RoomProps = {
 	socket: Socket;
 };
 
+type MetaData = {
+    fileName: string,
+    fileType: string,
+    fileSize: number,
+    roomId?: string,
+}
+
 function arrayBufferToBase64(buffer: any) {
 	let binary = "";
 	let bytes = new Uint8Array(buffer);
@@ -29,16 +36,22 @@ function arrayBufferToBase64(buffer: any) {
 export const Room = ({ connected, roomId, socket }: RoomProps) => {
 	const [base64String, setBase64String] = useState("");
 	useEffect(() => {
-		socket.on("file-received", (data: ArrayBuffer, metaData: any) => {
+		socket.on("file-received", (data: ArrayBuffer, metaData: MetaData) => {
 			setBase64String(encode(data));
 		});
 	}, []);
 
+	function getFileUri(name: string) {
+		//Specify type here like jpeg, png, etc. Will add more types 
+		return FileSystem.documentDirectory + `${encodeURI(name)}.jpeg`;
+	}
 
 	const shareFile = async () => {
-		const downloadPath = FileSystem.cacheDirectory + 'fileName.jpg';
-		const { uri: localUrl } = await FileSystem.downloadAsync(`data:image/png;base64,${base64String}`, downloadPath);
-		Sharing.shareAsync(localUrl);
+		const fileUri = getFileUri("test");
+		await FileSystem.writeAsStringAsync(fileUri, base64String, { encoding: FileSystem.EncodingType.Base64 });
+		//const downloadPath = FileSystem.cacheDirectory + 'fileName.jpg';
+		//const { uri: localUrl } = await FileSystem.downloadAsync(`data:image/png;base64,${base64String}`, downloadPath);
+		Sharing.shareAsync(fileUri);
 	}
 
 	return (
