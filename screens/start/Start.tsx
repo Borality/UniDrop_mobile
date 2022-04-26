@@ -50,6 +50,16 @@ export default function StartScreen({ navigation }: { navigation: any }) {
 					title="Join room"
 					onPress={() => navigation.navigate("JoinRoom")}
 				/>
+				<Button
+					buttonStyle={stylesMain.button}
+					title="Home"
+					onPress={() => navigation.navigate("Home")}
+				/>
+				<Button
+					buttonStyle={stylesMain.button}
+					title="Scanner"
+					onPress={() => navigation.navigate("Scanner")}
+				/>
 			</View>
 		</View>
 	);

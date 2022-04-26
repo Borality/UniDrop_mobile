@@ -14,6 +14,8 @@ import {Room} from "../screens/Room/room"
 import {CreateRoom} from "../screens/CreateRoom/createRoom";
 import {JoinRoom} from "../screens/JoinRoom/joinRoom";
 import FileShare from "../screens/FileShare/fileShare";
+import Home from "../screens/Home";
+import Scanner from "../screens/Scanner";
 
 export default function Navigation() {
 	return (
@@ -97,6 +99,23 @@ function RootNavigator() {
 					title: "UniDrop",
 				}}
 			/>
+			<Stack.Screen
+				name="Home"
+				component={Home}
+				options={{
+					headerShown: true,
+					title: "UniDrop",
+				}}
+			/>
+			<Stack.Screen
+				name="Scanner"
+				component={Scanner}
+				options={{
+					headerShown: true,
+					title: "UniDrop",
+				}}
+			/>
+
 		</Stack.Navigator>
 	);
 }

@@ -1,9 +1,10 @@
 import React, {useState,useEffect} from 'react';
 import {Text, View, StyleSheet, Button, Linking} from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import {stylesMain} from "../core-ui/components.styles";
 
 export default function Scanner(){
-    const [hasPermission, setHasPermission] = useState(null);
+    const [hasPermission, setHasPermission] = useState<any | null>(null);
     const [scanned,setScanned] = useState(false);
 
     useEffect(() => {
@@ -13,9 +14,10 @@ export default function Scanner(){
         })();
     },[]);
 
-    const handleBarCodeScanned = ({type,data}) => {
+    const handleBarCodeScanned = ({type,data}: {type: any, data: any}) => {
         setScanned(true);
-        alert(`Bar Code with Type ${type} and data ${Linking.openURL(`${data}`)} has been scanned`);
+        alert(`Bar Code with Type ${type} and data ${data} has been scanned`);
+        
     };
 
     if (hasPermission == null){
@@ -26,7 +28,7 @@ export default function Scanner(){
     }
 
     return(
-        <View> style={styles.container}
+        <View style={stylesMain.container}> 
             <BarCodeScanner
             onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
             style = {StyleSheet.absoluteFillObject}
@@ -36,10 +38,3 @@ export default function Scanner(){
     )
 }
 
-const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        flexDirection:'column',
-        justifyContent:'center'
-    }
-})

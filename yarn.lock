@@ -3979,6 +3979,14 @@ expo-asset@~8.4.0, expo-asset@~8.4.3, expo-asset@~8.4.6:
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
 
+expo-barcode-scanner@^11.2.1:
+  version "11.2.1"
+  resolved "https://registry.yarnpkg.com/expo-barcode-scanner/-/expo-barcode-scanner-11.2.1.tgz#66c1dd44bf2c8bbe88065fff6d02b865f0995228"
+  integrity sha512-NLMnZA2aoPeCBaxJIOEFxbbHfQhZ25NViay1FFumbZOuQFLj1CwlGNyGSyyERbXpdqwQ4VKqYaCux/7UF+dwxA==
+  dependencies:
+    "@expo/config-plugins" "^4.0.2"
+    expo-image-loader "~3.1.0"
+
 expo-constants@10.0.0:
   version "10.0.0"
   resolved "https://registry.npmjs.org/expo-constants/-/expo-constants-10.0.0.tgz"
@@ -4064,6 +4072,11 @@ expo-image-loader@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-3.0.0.tgz#5ada47a0f90f8dec1777520d36e35c65155d9ea9"
   integrity sha512-r4D+uLCf5vm5A2JIbF1Bc9FjYKrYGSLShbFB1MUvZ4BpSXJPRsprYZ9veUBVzzhh8hr23ahTFjMzp3nC57iREw==
+
+expo-image-loader@~3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-3.1.1.tgz#f88d94e66c5a102f15d858973c03b92e10662575"
+  integrity sha512-ZX4Bh3K4CCX1aZflnmbOgFNLS+c0/GUys4wdvqxO+4A4KU1NNb3jE7RVa/OFYNPDcGhEw20c1QjyE/WsVURJpg==
 
 expo-image-picker@~12.0.1:
   version "12.0.2"
