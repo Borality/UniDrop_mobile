@@ -15,7 +15,6 @@ import {CreateRoom} from "../screens/CreateRoom/createRoom";
 import {JoinRoom} from "../screens/JoinRoom/joinRoom";
 import FileShare from "../screens/FileShare/fileShare";
 
-
 export default function Navigation() {
 	return (
 		<NavigationContainer>
