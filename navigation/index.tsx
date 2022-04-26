@@ -29,7 +29,7 @@ const Stack = createNativeStackNavigator();
 function RootNavigator() {
 	return (
 		<Stack.Navigator>
-			<Stack.Screen
+			{/* <Stack.Screen
 				name="Login"
 				component={Login}
 				options={{
@@ -40,12 +40,17 @@ function RootNavigator() {
 					},
 					headerTintColor: "#fff",
 				}}
-			/>
+			/> */}
 			<Stack.Screen
 				name="Start"
 				component={Start}
 				options={{
-					headerShown: false,
+					headerShown: true,
+					title: "UniDrop",
+					headerStyle: {
+						backgroundColor: "#303846",
+					},
+					headerTintColor: "#fff",
 				}}
 			/>
 			<Stack.Screen
@@ -74,6 +79,7 @@ function RootNavigator() {
 				component={CreateRoom}
 				options={{
 					headerShown: true,
+					title: "UniDrop",
 				}}
 			/>
 			<Stack.Screen
@@ -81,6 +87,7 @@ function RootNavigator() {
 				component={JoinRoom}
 				options={{
 					headerShown: true,
+					title: "UniDrop",
 				}}
 			/>
 			<Stack.Screen
@@ -88,6 +95,7 @@ function RootNavigator() {
 				component={FileShare}
 				options={{
 					headerShown: true,
+					title: "UniDrop",
 				}}
 			/>
 		</Stack.Navigator>
