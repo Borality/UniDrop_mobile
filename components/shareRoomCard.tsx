@@ -30,7 +30,7 @@ export const ShareRoomCard = ({ roomId }: ShareRoomCardProps) => {
 				<View style={{ marginVertical: 10 }}>
 					<Text style={stylesMain.text}>Or join with QR code</Text>
 				</View>
-				<View>
+				<View style={{ alignItems: "center", justifyContent: "center" }}>
 					<QRCode value={roomId} />
 				</View>
 			</View>

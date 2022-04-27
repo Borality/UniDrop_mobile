@@ -14,8 +14,7 @@ import {Room} from "../screens/Room/room"
 import {CreateRoom} from "../screens/CreateRoom/createRoom";
 import {JoinRoom} from "../screens/JoinRoom/joinRoom";
 import FileShare from "../screens/FileShare/fileShare";
-import Home from "../screens/Home";
-import Scanner from "../screens/Scanner";
+import Scanner from "../components/Scanner";
 
 export default function Navigation() {
 	return (
@@ -81,6 +80,10 @@ function RootNavigator() {
 				options={{
 					headerShown: true,
 					title: "UniDrop",
+					headerStyle: {
+						backgroundColor: "#303846",
+					},
+					headerTintColor: "#fff",
 				}}
 			/>
 			<Stack.Screen
@@ -89,7 +92,12 @@ function RootNavigator() {
 				options={{
 					headerShown: true,
 					title: "UniDrop",
+					headerStyle: {
+						backgroundColor: "#303846",
+					},
+					headerTintColor: "#fff",
 				}}
+				initialParams={{ roomNumber: 0 }}
 			/>
 			<Stack.Screen
 				name="FileShare"
@@ -97,14 +105,10 @@ function RootNavigator() {
 				options={{
 					headerShown: true,
 					title: "UniDrop",
-				}}
-			/>
-			<Stack.Screen
-				name="Home"
-				component={Home}
-				options={{
-					headerShown: true,
-					title: "UniDrop",
+					headerStyle: {
+						backgroundColor: "#303846",
+					},
+					headerTintColor: "#fff",
 				}}
 			/>
 			<Stack.Screen
@@ -113,6 +117,10 @@ function RootNavigator() {
 				options={{
 					headerShown: true,
 					title: "UniDrop",
+					headerStyle: {
+						backgroundColor: "#303846",
+					},
+					headerTintColor: "#fff",
 				}}
 			/>
 

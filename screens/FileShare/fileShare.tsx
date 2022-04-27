@@ -34,6 +34,7 @@ const FileShare = ({ socket, roomId }: FileShareProps) => {
 			setBase64String(result.base64);
 			setMetaType(result.type);
 			setFileCount(fileCount + 1);
+			const metaTag = "jpg";
 			if (result.type == "image") {
 				console.log("image");
 			}
@@ -41,17 +42,10 @@ const FileShare = ({ socket, roomId }: FileShareProps) => {
 			else if (result.type == "video") {
 				console.log("video");
 			}
-			// const metaData: MetaData = {
-			// 	fileName: result.uri,
-			// 	fileType: "jpg",
-			// 	fileSize: 10,
-			// 	roomId: roomId,
-			// };
-			// socket.emit("file-ready", arrayBuffer, metaData);
 			const metaData: MetaData = {
-				fileName: `file${fileCount}.jpg`,
+				fileName: `file${fileCount}.${metaTag}`,
 				fileType: "image",
-				fileSize: 100,
+				fileSize: result.width * result.height * 3,
 				roomId: roomId,
 			};
 			const arrayBuffer = decode(result.base64!);
@@ -59,15 +53,15 @@ const FileShare = ({ socket, roomId }: FileShareProps) => {
 		}
 	};
 
-	
 	return (
 		<View style={stylesMain.container}>
 			<View style={stylesMain.mainContainer}>
 				<Text style={stylesMain.title}>Add files</Text>
-				<Text> </Text>
-				{/* <Text style={stylesMain.text}>{image}</Text> */}
-				<Button style = {stylesMain.button} title="Add media" onPress={pickImage} />
-				<Image source = {{uri: image}} style = {{width: "100%", height: "50%"}}/>
+				<Button
+					style={stylesMain.button}
+					title="Add media"
+					onPress={pickImage}
+				/>
 			</View>
 		</View>
 	);

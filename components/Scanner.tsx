@@ -1,9 +1,9 @@
 import React, {useState,useEffect} from 'react';
-import {Text, View, StyleSheet, Button, Linking} from 'react-native';
+import {Text, View, StyleSheet, Button} from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import {stylesMain} from "../core-ui/components.styles";
 
-export default function Scanner(){
+export default function Scanner({navigation}: {navigation: any}){
     const [hasPermission, setHasPermission] = useState<any | null>(null);
     const [scanned,setScanned] = useState(false);
 
@@ -13,11 +13,13 @@ export default function Scanner(){
             setHasPermission(status === 'granted');
         })();
     },[]);
-
+    //When scan is successful give data which is room number
     const handleBarCodeScanned = ({type,data}: {type: any, data: any}) => {
         setScanned(true);
-        alert(`Bar Code with Type ${type} and data ${data} has been scanned`);
-        
+        navigation.navigate('JoinRoom', {
+            roomNumber: data,
+          });
+
     };
 
     if (hasPermission == null){
