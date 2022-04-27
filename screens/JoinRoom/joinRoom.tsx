@@ -6,10 +6,17 @@ import { io, Socket } from "socket.io-client";
 import FileShare from "../../screens/FileShare/fileShare";
 let socket: Socket;
 
-export const JoinRoom = ({ navigation }: { navigation: any }) => {
-	const [data, setData] = useState("No Result");
+export const JoinRoom = ({
+	navigation,
+	route,
+}: {
+	navigation: any;
+	route: any;
+}) => {
 	const [value, setValue] = useState("");
 	const [roomReady, setRoomReady] = useState(false);
+	//Holds qr scanner room number from props of scanner
+	const { roomNumber } = route.params;
 
 	useEffect(() => {
 		socket = io("https://limitless-tundra-34178.herokuapp.com/");
@@ -29,12 +36,23 @@ export const JoinRoom = ({ navigation }: { navigation: any }) => {
 	}, []);
 
 	const handleClick = (): void => {
-		console.log(value);
-		socket.emit("join-room", {
-			roomId: value,
-			socketId: socket.id,
-			//Give information of platform used this is file sender btw
-		});
+		//If qr code is 0 then add value which is text input
+		//Else just add qr scanner roomNumber from route props
+		{
+			roomNumber == 0
+				? socket.emit("join-room", {
+						roomId: value,
+						socketId: socket.id,
+						//Give information of platform used this is file sender btw
+				  })
+				: 
+				setValue(roomNumber)
+				socket.emit("join-room", {
+						roomId: roomNumber,
+						socketId: socket.id,
+						//Give information of platform used this is file sender btw
+				  });
+		}
 	};
 
 	return (
@@ -43,9 +61,16 @@ export const JoinRoom = ({ navigation }: { navigation: any }) => {
 				<FileShare socket={socket} roomId={value} />
 			) : (
 				<View style={stylesMain.container}>
-					<View style = {stylesMain.mainContainer}>
+					<View style={stylesMain.mainContainer}>
 						<Text style={stylesMain.title}>Enter room id</Text>
-                        <Input placeholder='Enter Room ID' onChangeText={value => setValue(value)}/>
+						<Input
+							placeholder="Enter Room ID"
+							onChangeText={(value) => setValue(value)}
+						/>
+						<Button
+							title="Scan QR code"
+							onPress={() => navigation.navigate("Scanner")}
+						/>
 						<Button
 							style={stylesMain.button}
 							onPress={handleClick}
